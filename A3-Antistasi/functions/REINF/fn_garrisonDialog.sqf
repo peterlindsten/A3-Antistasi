@@ -19,10 +19,10 @@ positionXGarr = "";
 _nearX = [markersX,_positionTel] call BIS_fnc_nearestPosition;
 _positionX = getMarkerPos _nearX;
 
-if (getMarkerPos _nearX distance _positionTel > 40) exitWith {hint "You must click near a marked zone"; _nul=CreateDialog "build_menu";};
+if (getMarkerPos _nearX distance _positionTel > 40) exitWith {hint "You must click near a marked zone"; _nul=CreateDialog "a3c_build_menu";};
 
-if (not(sidesX getVariable [_nearX,sideUnknown] == teamPlayer)) exitWith {hint format ["That zone does not belong to %1",nameTeamPlayer]; _nul=CreateDialog "build_menu";};
-if ([_positionX,500] call A3A_fnc_enemyNearCheck) exitWith {hint "You cannot manage this garrison while there are enemies nearby";_nul=CreateDialog "build_menu"};
+if (not(sidesX getVariable [_nearX,sideUnknown] == teamPlayer)) exitWith {hint format ["That zone does not belong to %1",nameTeamPlayer]; _nul=CreateDialog "a3c_build_menu";};
+if ([_positionX,500] call A3A_fnc_enemyNearCheck) exitWith {hint "You cannot manage this garrison while there are enemies nearby";_nul=CreateDialog "a3c_build_menu"};
 //if (((_nearX in outpostsFIA) and !(isOnRoad _positionX)) /*or (_nearX in citiesX)*/ or (_nearX in controlsX)) exitWith {hint "You cannot manage garrisons on this kind of zone"; _nul=CreateDialog "garrison_menu"};
 _outpostFIA = if (_nearX in outpostsFIA) then {true} else {false};
 _wPost = if (_outpostFIA and !(isOnRoad getMarkerPos _nearX)) then {true} else {false};
@@ -30,7 +30,7 @@ _garrison = if (! _wpost) then {garrison getVariable [_nearX,[]]} else {SDKSnipe
 
 if (_typeX == "rem") then
 	{
-	if ((count _garrison == 0) and !(_nearX in outpostsFIA)) exitWith {hint "The place has no garrisoned troops to remove"; _nul=CreateDialog "build_menu";};
+	if ((count _garrison == 0) and !(_nearX in outpostsFIA)) exitWith {hint "The place has no garrisoned troops to remove"; _nul=CreateDialog "a3c_build_menu";};
 	_costs = 0;
 	_hr = 0;
 	{
@@ -56,7 +56,7 @@ if (_typeX == "rem") then
 		};
 	[_nearX] call A3A_fnc_mrkUpdate;
 	hint format ["Garrison removed\n\nRecovered Money: %1 €\nRecovered HR: %2",_costs,_hr];
-	_nul=CreateDialog "build_menu";
+	_nul=CreateDialog "a3c_build_menu";
 	}
 else
 	{
@@ -64,7 +64,7 @@ else
 	publicVariable "positionXGarr";
 	hint format ["Info%1",[_nearX] call A3A_fnc_garrisonInfo];
 	closeDialog 0;
-	_nul=CreateDialog "garrison_recruit";
+	_nul=CreateDialog "a3c_garrison_recruit";
 	sleep 1;
 	disableSerialization;
 

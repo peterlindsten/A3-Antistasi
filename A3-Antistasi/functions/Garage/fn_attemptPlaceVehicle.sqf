@@ -45,3 +45,6 @@ if(!(isNil "_garageVeh") && {typeName _garageVeh == "OBJECT"}) then {
 };
 
 [] call A3A_fnc_vehPlacementCleanup;
+
+// Update Players Garage on Database
+[2] call a3c_fnc_updatePart;

@@ -1,5 +1,5 @@
 private ["_display","_childControl","_veh","_textX","_costs","_typeVehX"];
-_nul = createDialog "HQ_menu";
+_nul = createDialog "a3c_hq_menu";
 
 sleep 1;
 disableSerialization;

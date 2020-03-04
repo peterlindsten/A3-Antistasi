@@ -68,7 +68,7 @@ if (spawner getVariable _markerX != 2) then
 		] call A3A_fnc_taskUpdate;
 		[2,0] remoteExec ["A3A_fnc_prestige",2];
 		[1200] remoteExec ["A3A_fnc_timingCA",2];
-		{if (_x distance _veh < 500) then {[10,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
+		{if (_x distance _veh < 500) then {[25,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 		[5,theBoss] call A3A_fnc_playerScoreAdd;
 		};
 	};
@@ -87,7 +87,7 @@ if (dateToNumber date > _dateLimitNum) then
 		] call A3A_fnc_taskUpdate;
 		[2,0] remoteExec ["A3A_fnc_prestige",2];
 		[1200] remoteExec ["A3A_fnc_timingCA",2];
-		{if (_x distance _veh < 500) then {[10,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
+		{if (_x distance _veh < 500) then {[25,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 		[5,theBoss] call A3A_fnc_playerScoreAdd;
 		}
 	else

@@ -128,7 +128,7 @@ if ((_truckX distance _posbase < 50) and (dateToNumber date < _dateLimitNum)) th
 	[0,5000*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
 	[10*_bonus,0] remoteExec ["A3A_fnc_prestige",2];
 	[1800*_bonus] remoteExec ["A3A_fnc_timingCA",2];
-	{if (_x distance _truckX < 500) then {[10*_bonus,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
+	{if (_x distance _truckX < 500) then {[25*_bonus,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[5*_bonus,theBoss] call A3A_fnc_playerScoreAdd;
 	waitUntil {sleep 1; speed _truckX == 0};
 

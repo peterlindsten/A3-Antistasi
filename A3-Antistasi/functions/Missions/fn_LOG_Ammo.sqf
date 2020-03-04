@@ -104,7 +104,7 @@ if ((spawner getVariable _markerX != 2) and !(sidesX getVariable [_markerX,sideU
 			["LOG",[format ["We've spotted an Ammotruck in an %1. Go there and destroy or steal it before %2.",_nameDest,_displayTime],"Steal or Destroy Ammotruck",_markerX],_positionX,"SUCCEEDED","rearm"] call A3A_fnc_taskUpdate;
 			[0,300*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
 			[1200*_bonus] remoteExec ["A3A_fnc_timingCA",2];
-			{if (_x distance _truckX < 500) then {[10*_bonus,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
+			{if (_x distance _truckX < 500) then {[25*_bonus,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 			[5*_bonus,theBoss] call A3A_fnc_playerScoreAdd;
 		};
 	}

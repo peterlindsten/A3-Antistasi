@@ -32,9 +32,9 @@ petros addEventHandler
         {
             if (_damage > 1) then
             {
-                if (!(petros getVariable ["incapacitated",false])) then
+                if (!(petros getVariable ["INCAPACITATED",false])) then
                 {
-                    petros setVariable ["incapacitated",true,true];
+                    petros setVariable ["INCAPACITATED",true,true];
                     _damage = 0.9;
                     if (!isNull _injurer) then {[petros,side _injurer] spawn A3A_fnc_unconscious} else {[petros,sideUnknown] spawn A3A_fnc_unconscious};
                 }

@@ -51,8 +51,11 @@ _EHkilledIdx = _unit addEventHandler
 		{
 			if (isPlayer _killer) then
 			{
-				if (typeOf _victim == "C_man_w_worker_F") then {_killer addRating 1000};
-				[-10,_killer] call A3A_fnc_playerScoreAdd;
+				[format["%1 Killed a Civilian", name _killer]] remoteExec ["systemChat", 0, false];
+				diag_log format ["[Antistasi] %1 Killed a Civilian", name _killer];
+				[1,_killer,"civk"] remoteExec ["a3c_fnc_updateStat",_killer];
+				[-30,_killer] call A3A_fnc_playerScoreAdd;
+				[_killer, [1,0,0,0,0] ] remoteExec[ "addPlayerScores", _killer ];
 			};
 			_multiplier = 1;
 			if (typeOf _victim == "C_journalist_F") then {_multiplier = 10};

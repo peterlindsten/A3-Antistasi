@@ -7,7 +7,7 @@ if ([player,300] call A3A_fnc_enemyNearCheck) exitWith {Hint "You cannot buy veh
 private _typeVehX = _this select 0;
 if (_typeVehX == "not_supported") exitWith {hint "The vehicle you requested is not supported in your current modset"};
 
-vehiclePurchase_cost = [_typeVehX] call A3A_fnc_vehiclePrice;
+vehiclePurchase_cost = _this select 1;
 
 private _resourcesFIA = 0;
 if (!isMultiPlayer) then {_resourcesFIA = server getVariable "resourcesFIA"} else

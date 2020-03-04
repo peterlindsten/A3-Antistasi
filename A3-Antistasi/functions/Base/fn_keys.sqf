@@ -1,5 +1,5 @@
 _handled = false;
-if (player getVariable ["incapacitated",false]) exitWith {_handled};
+if (player getVariable ["INCAPACITATED",false]) exitWith {_handled};
 if (player getVariable ["owner",player] != player) exitWith {_handled};
 _key = _this select 1;
 if (_key == 21) then
@@ -16,7 +16,7 @@ if (_key == 21) then
 		else
 			{
 			closedialog 0;
-			_nul = createDialog "radio_comm";
+			_nul = createDialog "a3c_radio_comm";
 			};
 		};
 	}
@@ -24,18 +24,10 @@ else
 	{
 	if (_key == 207) then
 		{
-		if (!hasACEhearing) then
-			{
-			if (soundVolume <= 0.5) then
-				{
-				0.5 fadeSound 1;
-				hintSilent "You've taken out your ear plugs.";
-				}
-			else
-				{
-				0.5 fadeSound 0.1;
-				hintSilent "You've inserted your ear plugs.";
-				};
+			if (soundVolume isEqualTo 1) then {
+			1 fadeSound 0.4; hintSilent "Ear Plugs Inserted";
+			}else{
+			1 fadeSound 1; hintSilent "Ear Plugs Removed";
 			};
 		};
 	};

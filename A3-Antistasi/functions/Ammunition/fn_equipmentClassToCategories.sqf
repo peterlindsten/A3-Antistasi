@@ -106,6 +106,7 @@ if (_baseCategory == "RocketLaunchers") then {
 };
 
 if (_baseCategory == "MissileLaunchers") then {
+	diag_log format [" A3 - Checking %1", _className];
 	private _launcherInfo = [_className] call A3A_fnc_launcherInfo;
 	
 	//If we can lock air, it's AA.

@@ -10,6 +10,8 @@ flagX allowDamage false;
 vehicleBox allowDamage false;
 fireX allowDamage false;
 mapX allowDamage false;
+modMembersX = [];
+publicVariable "ModMembersX";
 
 //Load server id
 serverID = profileNameSpace getVariable ["ss_ServerID",nil];
@@ -203,7 +205,6 @@ waitUntil {sleep 1;!(isNil "placementDone")};
 [2, "HQ Placed, continuing init", _fileName] call A3A_fnc_log;
 distanceXs = [] spawn A3A_fnc_distance;
 [] spawn A3A_fnc_resourcecheck;
-[] execVM "Scripts\fn_advancedTowingInit.sqf";
 savingServer = false;
 
 [] spawn A3A_fnc_spawnDebuggingLoop;
@@ -215,5 +216,9 @@ savingServer = false;
 		sleep 30;
 	};
 };
+
+[] call compile preprocessFileLineNumbers "\a3_antistasi\init.sqf";
+
 execvm "functions\init\fn_initSnowFall.sqf";
+
 [2,"initServer completed",_fileName] call A3A_fnc_log;

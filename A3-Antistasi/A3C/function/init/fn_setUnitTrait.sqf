@@ -1,0 +1,11 @@
+player setUnitTrait ["Medic",true];
+player setUnitTrait ["engineer",true];
+player setUnitTrait ["explosiveSpecialist",true];
+player setUnitTrait ["UAVHacker",true];
+player setUnitTrait ["camouflageCoef",0.8];
+player setUnitTrait ["audibleCoef",0.8];
+player setUnitTrait ["loadCoef",0.8];
+player setCustomAimCoef 0.5;
+player setUnitRecoilCoefficient 0.5;
+player enableFatigue false;
+player enableStamina false;

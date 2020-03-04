@@ -15,6 +15,6 @@ if (!isMultiplayer) then {
 };
 
 enableSaving [false,false];
-mapX setObjectTexture [0,"pic.jpg"];
+mapX setObjectTexture [0,"A3-antistasi.jpg"];
 
 [2,"Init finished",_fileName] call A3A_fnc_log;

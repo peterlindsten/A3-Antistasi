@@ -7,6 +7,9 @@ if (isNil "logLevel") then { logLevel = 2 };scriptName "initClient.sqf";
 
 [2,"initClient started",_fileName] call A3A_fnc_log;
 
+//cutText ["Waiting Server Init","BLACK",0];
+titleText ["Waiting for server to load . . .", "PLAIN"];
+
 call A3A_fnc_installSchrodingersBuildingFix;
 
 if (hasInterface) then {
@@ -164,20 +167,14 @@ if (player getVariable ["pvp",false]) exitWith {
 	}];
 };
 
-player setVariable ["score",0,true];
 player setVariable ["owner",player,true];
 player setVariable ["punish",0,true];
-player setVariable ["moneyX",100,true];
-player setUnitRank "PRIVATE";
-player setVariable ["rankX",rank player,true];
 
 stragglers = creategroup teamPlayer;
 (group player) enableAttack false;
-player setUnitTrait ["camouflageCoef",0.8];
-player setUnitTrait ["audibleCoef",0.8];
 
 //Give the player the base loadout.
-[player] call A3A_fnc_dress;
+//[player] call A3A_fnc_dress;
 
 player setvariable ["compromised",0];
 player addEventHandler ["FiredMan", {
@@ -202,6 +199,15 @@ player addEventHandler ["FiredMan", {
 				};
 			};
 		};
+	};
+}];
+player addEventHandler ["HandleDamage", {
+	private _victim = param [0];
+	private _damage = param [2];
+	private _instigator = param [6];
+	if(!isNull _instigator && isPlayer _instigator && _victim != _instigator && side _instigator == teamPlayer && _damage > 0.9) then {
+		[_instigator, 20, 0.21, _victim] remoteExec ["A3A_fnc_punishment",_instigator];
+		[format ["%1 was injured by %2 (UID: %3), %4m from HQ",name _victim,name _instigator,getPlayerUID _instigator,_victim distance2D posHQ]] remoteExec ["diag_log",2];
 	};
 }];
 player addEventHandler ["InventoryOpened", {
@@ -233,7 +239,7 @@ player addEventHandler ["InventoryOpened", {
 }];
 /*
 player addEventHandler ["InventoryClosed", {
-	_control = false;
+[1] call a3c_fnc_updatePart;
 	_uniform = uniform player;
 	_typeSoldier = getText (configfile >> "CfgWeapons" >> _uniform >> "ItemInfo" >> "uniformClass");
 	_sideType = getNumber (configfile >> "CfgVehicles" >> _typeSoldier >> "side");
@@ -379,46 +385,71 @@ if (_isJip) then {
 			};
 		} forEach missionsX;
 	};
+	if (isNil "placementDone") then {
+		waitUntil {!isNil "theBoss"};
+		if (player == theBoss) then {
+		    waitUntil {!(isNil"loadLastSave")};
+		    if !(loadLastSave) then {
+					//cutText ["","BLACK IN",0];
+					titleText ["", "PLAIN"];
+		    		_nul = [] spawn A3A_fnc_placementSelection;
+				player setVariable ['canSave', true, true];
+	    		};
+		};
+	}
+	else {
+		[] spawn A3A_fnc_createDialog_shouldLoadPersonalSave;
+	};
+	[2,"JIP client loaded",_fileName] call A3A_fnc_log;
+	player setPos (getMarkerPos respawnTeamPlayer);
 }
 else 
 {
 	[2,"Not Joining in Progress (JIP)",_filename] call A3A_fnc_log;
-};
-
-[] spawn A3A_fnc_modBlacklist;
-
-//Move this
-//HC_commanderX synchronizeObjectsAdd [player];
-//player synchronizeObjectsAdd [HC_commanderX];
-
-_textX = [];
-
-if ((hasTFAR) or (hasACRE)) then {
-	_textX = ["TFAR or ACRE Detected\n\nAntistasi detects TFAR or ACRE in the server config.\nAll players will start with addon default radios.\nDefault revive system will shut down radios while players are unconscious.\n\n"];
-};
-if (hasACE) then {
-	_textX = _textX + ["ACE 3 Detected\n\nAntistasi detects ACE modules in the server config.\nACE items added to arsenal and ammoboxes. Default AI control is disabled\nIf ACE Medical is used, default revive system will be disabled.\nIf ACE Hearing is used, default earplugs will be disabled."];
-};
-if (hasRHS) then {
-	_textX = _textX + ["RHS Detected\n\nAntistasi detects RHS in the server config.\nDepending on the modules will have the following effects.\n\nAFRF: Replaces CSAT by a mix of russian units\n\nUSAF: Replaces NATO by a mix of US units\n\nGREF: Recruited AI will count with RHS as basic weapons, replaces FIA with Chdk units. Adds some civilian trucks"];
-};
-if (hasFFAA) then {
-	_textX = _textX + ["FFAA Detected\n\nAntistasi detects FFAA in the server config.\nFIA Faction will be replaced by Spanish Armed Forces"];
-};
-
-if (hasTFAR or hasACE or hasRHS or hasACRE or hasFFAA) then {
-	[_textX] spawn {
-		sleep 0.5;
-		_textX = _this select 0;
-		"Integrated Mods Detected" hintC _textX;
-		hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
-			0 = _this spawn {
-				_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
-				hintSilent "";
+	if (isNil "placementDone") then {
+		waitUntil {!isNil "theBoss"};
+		if (player == theBoss) then 
+		{
+			
+			if (isMultiplayer) then {
+				HC_commanderX synchronizeObjectsAdd [player];
+				player synchronizeObjectsAdd [HC_commanderX];
+		    	if !(loadLastSave) then 
+				{
+					_nul = [] spawn A3A_fnc_placementSelection;
+					//This shouldn't really be here, but it's triggered on every other path through the code.
+					//This big if statement needs tidying, really.
+					player setVariable ['canSave', true, true];
+		    	}
+		    	else {
+		    		[] spawn A3A_fnc_createDialog_shouldLoadPersonalSave;
+				};
+				[2,"Client load completed",_fileName] call A3A_fnc_log;
+			}
+			else 
+			{
+				membersX = [];
+				player setUnitTrait ["medic",true];
+				player setUnitTrait ["engineer",true];
+				[] spawn A3A_fnc_loadPlayer;
 			};
-		}];
+		}
+		else 
+		{
+				player setVariable ["score", 0,true];
+				[] spawn A3A_fnc_createDialog_shouldLoadPersonalSave;
+				player setPos (getMarkerPos respawnTeamPlayer);
+		};
+	}
+	else 
+	{
+		if !(isServer) then {
+			[] spawn A3A_fnc_createDialog_shouldLoadPersonalSave;
+			player setPos (getMarkerPos respawnTeamPlayer);
+		};
 	};
 };
+
 waituntil {!isnull (finddisplay 46)};
 gameMenu = (findDisplay 46) displayAddEventHandler ["KeyDown",A3A_fnc_keys];
 //removeAllActions boxX;
@@ -448,30 +479,60 @@ if (isMultiplayer) then {
 	vehicleBox addAction ["Personal Garage", { [GARAGE_PERSONAL] spawn A3A_fnc_garage },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)", 4];
 };
 vehicleBox addAction ["Faction Garage", { [GARAGE_FACTION] spawn A3A_fnc_garage; },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)", 4];
-vehicleBox addAction ["Buy Vehicle", {if ([player,300] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "vehicle_option"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)", 4];
+vehicleBox addAction ["Buy Vehicle", {if ([player,300] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {call a3c_fnc_buyVehicle}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)", 4];
 vehicleBox addAction ["Move this asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 
 fireX allowDamage false;
 [fireX, "fireX"] call A3A_fnc_flagaction;
 
 mapX allowDamage false;
-mapX addAction ["Game Options", {hint format ["Antistasi - %2\n\nVersion: %1\n\nDifficulty: %3\nUnlock Weapon Number: %4\nLimited Fast Travel: %5",antistasiVersion,worldName,if (skillMult == 2) then {"Normal"} else {if (skillMult == 1) then {"Easy"} else {"Hard"}},minWeaps,if (limitedFT) then {"Yes"} else {"No"}]; nul=CreateDialog "game_options";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)", 4];
+mapX addAction ["Game Options", {hint format ["Antistasi - %2\n\nVersion: %1\n\nDifficulty: %3\nUnlock Weapon Number: %4\nLimited Fast Travel: %5",antistasiVersion,worldName,if (skillMult == 2) then {"Normal"} else {if (skillMult == 1) then {"Easy"} else {"Hard"}},minWeaps,if (limitedFT) then {"Yes"} else {"No"}]; nul=CreateDialog "a3c_game_options";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)", 4];
 mapX addAction ["Map Info", A3A_fnc_cityinfo,nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)", 4];
 mapX addAction ["Move this asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 if (isMultiplayer) then {mapX addAction ["AI Load Info", { [] remoteExec ["A3A_fnc_AILoadInfo",4];},nil,0,false,true,"","((_this == theBoss) || (serverCommandAvailable ""#logout""))"]};
 _nul = [player] execVM "OrgPlayers\unitTraits.sqf";
-
-// only add petros actions if he's static
-if (petros == leader group petros) then {
-	group petros setGroupId ["Petros","GroupColor4"];
-	[petros,"remove"] call A3A_fnc_flagaction;		// in case we already created them in initserver
-	[petros,"mission"] call A3A_fnc_flagaction;
-};
+groupPetros = group petros;
+groupPetros setGroupIdGlobal ["Petros","GroupColor4"];
 petros setIdentity "friendlyX";
-if (worldName == "Tanoa") then {petros setName "Maru"} else {petros setName "Petros"};
+petros setName "Petros";
+petros disableAI "MOVE";
+petros disableAI "AUTOTARGET";
+[petros,"mission"] call A3A_fnc_flagaction;
+enableEnvironment [false, true];
+
+// Start Database Checks
+#include "..\..\A3C\init.sqf"
+
+waitUntil {clientIsReady};
+//cutText ["Starting Mission","BLACK IN",0];
+titleText ["Starting Mission", "PLAIN DOWN"];
+if (membershipEnabled) then {
+	_uid = getPlayerUID player;
+	_memblvl = player getVariable "memblvl";
+		if (_memblvl > 0) then{
+			if  (_uid in membersX) then{
+			diag_log format ["[A3 Client] Already in MembersX : %1",_uid];
+			} else {
+			membersX pushBackUnique _uid;
+			diag_log format ["[A3 Client] Added to MembersX : %1",_uid];
+			};
+		};
+		
+		if (_memblvl > 3) then{
+			if  (_uid in modMembersX) then{
+			diag_log format ["[A3 Client] Already in modMembersX : %1",_uid];
+			} else {
+			modMembersX pushBackUnique _uid;
+			diag_log format ["[A3 Client] Added to modMembersX : %1",_uid];
+			};
+		};
+
+publicVariable "modMembersX";
+publicVariable "membersX";
+};
+
 
 disableSerialization;
-//1 cutRsc ["H8erHUD","PLAIN",0,false];
 _layer = ["statisticsX"] call bis_fnc_rscLayer;
 _layer cutRsc ["H8erHUD","PLAIN",0,false];
 [] spawn A3A_fnc_statistics;
@@ -504,3 +565,27 @@ player setPos (getMarkerPos respawnTeamPlayer);
 enableEnvironment [false, true];
 
 [2,"initClient completed",_fileName] call A3A_fnc_log;
+
+// Save player stats every 10 minutes
+[] spawn {
+	while {true} do {
+		sleep (10 * 60);
+		[] call A3C_fnc_updateFull;
+		systemChat "Your Stats/Gear/Garage have been saved";
+	};
+};
+
+//Deploy Handler to ensure items are on the ground
+[{
+    params ["_unit", "_object", "_cost"];
+    private _return = (getPosATL _object) select 2 < 0.2;
+    _return
+}] call acex_fortify_fnc_addDeployHandler;
+
+//Deploy Handler to ensure items are within 50m of Petros
+[{
+    params ["_unit", "_object", "_cost"];
+    private _return = (petros distance _unit) < 50;
+    _return
+}] call acex_fortify_fnc_addDeployHandler;
+

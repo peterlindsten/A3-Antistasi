@@ -78,6 +78,7 @@ allCategories = allCategoriesExceptSpecial + specialCategories;
 allDLCMods = ["kart", "mark", "heli", "expansion", "jets", "orange", "tank", "globmob", "enoch", "officialmod", "tacops", "argo", "warlords"];
 
 //Mod detection is done locally to each client, in case some clients have different modsets for some reason.
+activeCUP = false;
 hasRHS = false;
 activeAFRF = false;
 activeUSAF = false;
@@ -104,6 +105,8 @@ hasACEHearing = isClass (configFile >> "CfgSounds" >> "ACE_EarRinging_Weak");
 hasACEMedical = isClass (configFile >> "CfgSounds" >> "ACE_heartbeat_fast_3");
 hasADVCPR = isClass (configFile >> "CfgPatches" >> "adv_aceCPR");
 hasADVSplint = isClass (configFile >> "CfgPatches" >> "adv_aceSplint");
+//CUP Detection
+if isClass (configFile >> "CfgFactionClasses" >> "CUP_B_US") then {activeCUP = true; diag_log format ["%1: [Antistasi] | INFO | initVar | CUP Detected.",servertime];};
 //IFA Detection
 if isClass (configFile >> "CfgPatches" >> "LIB_Core") then {hasIFA = true; diag_log format ["%1: [Antistasi] | INFO | initVar | IFA Detected.",servertime];};
 //RHS AFRF Detection
@@ -130,7 +133,7 @@ lamptypes = ["Lamps_Base_F", "PowerLines_base_F","Land_LampDecor_F","Land_LampHa
 //     SOUNDS AND ANIMATIONS     ///
 ////////////////////////////////////
 [2,"Compiling sounds and animations",_fileName] call A3A_fnc_log;
-ladridos = ["Music\dog_bark01.wss", "Music\dog_bark02.wss", "Music\dog_bark03.wss", "Music\dog_bark04.wss", "Music\dog_bark05.wss","Music\dog_maul01.wss","Music\dog_yelp01.wss","Music\dog_yelp02.wss","Music\dog_yelp03.wss"];
+ladridos = ["A3C\resource\sound\dog_bark01.ogg", "A3C\resource\sound\dog_bark02.ogg", "A3C\resource\sound\dog_bark03.ogg", "A3C\resource\sound\dog_bark04.ogg", "A3C\resource\sound\dog_bark05.ogg","A3C\resource\sound\dog_maul01.ogg","A3C\resource\sound\dog_yelp01.ogg","A3C\resource\sound\dog_yelp02.ogg","A3C\resource\sound\dog_yelp03.ogg"];
 injuredSounds =
 [
 	"a3\sounds_f\characters\human-sfx\Person0\P0_moan_13_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_14_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_15_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_16_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_17_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_18_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_19_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_20_words.wss",

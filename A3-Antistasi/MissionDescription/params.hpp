@@ -12,7 +12,7 @@ class Params
           title = "Game Mode";
           values[] = {1,2,3,4};
           texts[] = {"Reb vs Gov vs Inv","Reb vs Gov & Inv","Reb vs Gov","Reb vs Inv"};
-          default = 1;
+          default = 3;
      };
      class autoSave
      {
@@ -47,7 +47,7 @@ class Params
           title = "Enable Teamkill Punish";
           values[] = {1,0};
           texts[] = {"Yes","No"};
-          default = 1;
+          default = 0;
      };
      class mRadius
      {
@@ -107,7 +107,7 @@ class Params
           title = "Max distance non members can be from the closest member or HQ (they will be teleported to HQ after some timeout)";
           values[] = {4000,5000,6000,7000,8000,16000};
           texts[] = {"4 Kmts","5 Kmts","6 Kmts","7 Kmts","8 Kmts","Unlimited"};
-          default = 5000;
+          default = 8000;
      };
 	 class allowMembersFactionGarageAccess
      {
@@ -121,7 +121,7 @@ class Params
           title = "Limited Fast Travel";
           values[] = {0,1};
           texts[] = {"No","Yes"};
-          default = 1;
+          default = 0;
      };
      class napalmEnabled
      {
@@ -149,18 +149,11 @@ class Params
           title = "Should Guided Launchers become unlocked?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class allowUnlockedExplosives
      {
           title = "Should Explosives become unlocked?";
-          values[] = {1,0};
-          texts[] =  {"Yes","No"};
-          default = 0;
-     };
-     class startWithLongRangeRadio
-     {
-          title = "[TFAR] Start with Long Range Radio?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
           default = 1;
@@ -184,42 +177,42 @@ class Params
           title = "Allow Items and Vehicles from Marksman DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class Heli
      {
           title = "Allow Items and Vehicles from Heli DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class Expansion
      {
           title = "Allow Items and Vehicles from Apex DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class Jets
      {
           title = "Allow Items and Vehicles from Jets DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class Orange
      {
           title = "Allow Items and Vehicles from Laws of War DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class Tanks
      {
           title = "Allow Items and Vehicles from Tanks DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class GlobMob
      {
@@ -233,7 +226,7 @@ class Params
           title = "Allow Items and Vehicles from Contact DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class OfficialMod
      {
@@ -289,7 +282,7 @@ class Params
           title = "Maximum Weapon Types in Crates";
           values[] = {0,2,4,6,8,12,16};
           texts[] = {"1","3","5","7","9","13","17"};
-          default = 9;
+          default = 12;
      };
      class crateWepNumMax
      {
@@ -310,7 +303,7 @@ class Params
           title = "Maximum Item Types in Crates";
           values[] = {0,2,4,9};
           texts[] = {"1","3","5","10"};
-          default = 4;
+          default = 9;
      };
      class crateItemNumMax
      {
@@ -331,7 +324,7 @@ class Params
           title = "Maximum Ammo Types in Crates";
           values[] = {0,2,4,6,9,14,19};
           texts[] = {"1","3","5","7","10","15","20"};
-          default = 6;
+          default = 9;
      };
      class crateAmmoNumMax
      {
@@ -352,7 +345,7 @@ class Params
           title = "Maximum Explosive Types in Crates";
           values[] = {0,2,4,9};
           texts[] = {"1","3","5","10"};
-          default = 2;
+          default = 4;
      };
      class crateExplosiveNumMax
      {
@@ -373,7 +366,7 @@ class Params
           title = "Maximum Attachment Types in Crates";
           values[] = {0,2,4,6,9,12,15,19};
           texts[] = {"1","3","5","7","10","13","16","20"};
-          default = 6;
+          default = 9;
      };
      class crateAttachmentNumMax
      {
@@ -394,14 +387,14 @@ class Params
           title = "Maximum Backpack Types in Crates";
           values[] = {0,2,4,9};
           texts[] = {"1","3","5","10"};
-          default = 0;
+          default = 4;
      };
      class crateBackpackNumMax
      {
           title = "Maximum Backpack Quantity in Crates";
           values[] = {0,1,3,5,10,15};
           texts[] = {"None","1","3","5","10","15"};
-          default = 3;
+          default = 5;
      };
      class Spacer6
      {
@@ -415,14 +408,14 @@ class Params
           title = "Maximum Vest Types in Crates";
           values[] = {0,2,4,9};
           texts[] = {"1","3","5","10"};
-          default = 0;
+          default = 2;
      };
      class crateVestNumMax
      {
           title = "Maximum Vest Quantity in Crates";
           values[] = {0,1,3,5,10,15};
           texts[] = {"None","1","3","5","10","15"};
-          default = 0;
+          default = 3;
      };
      class Spacer7
      {

@@ -19,7 +19,8 @@ aceItems = [
 	"ACE_Tripod",
 	"ACE_Spraypaintred",
 	"ACE_UAVBattery",
-	"ACE_SpareBarrel"
+	"ACE_SpareBarrel",
+	"ACE_Fortify"
 ];
 
 aceMedItems = [

@@ -65,6 +65,7 @@ DECLARE_SERVER_VAR(smallCApos, []);
 DECLARE_SERVER_VAR(attackPos, []);
 DECLARE_SERVER_VAR(attackMrk, []);
 DECLARE_SERVER_VAR(airstrike, []);
+DECLARE_SERVER_VAR(convoyMarker, []);
 
 //Vehicles currently in the garage
 DECLARE_SERVER_VAR(vehInGarage, []);
@@ -260,15 +261,9 @@ private _vehIsValid = {
 DECLARE_SERVER_VAR(arrayCivVeh, (_civVehConfigs select {_x call _vehIsValid} apply {configName _x}));
 
 //Civilian Boats
-_civBoatConfigs = "(
-	getNumber (_x >> 'scope') isEqualTo 2 && {
-		getNumber (_x >> 'side') isEqualTo 3 && {
-			getText (_x >> 'vehicleClass') isEqualTo 'Ship'
-		}
-	}
-)" configClasses (configFile >> "CfgVehicles");
+_civBoats = ["C_Boat_Civil_01_F", "C_Boat_Civil_01_rescue_F", "C_Rubberboat", "C_Boat_Transport_02_F", "C_Scooter_Transport_01_F", "CUP_C_Fishing_Boat_Chernarus", "CUP_C_PBX_CIV", "CUP_C_Zodiac_CIV"];
 
-DECLARE_SERVER_VAR(CivBoats, (_civBoatConfigs select {_x call _vehIsValid} apply {configName _x}));
+DECLARE_SERVER_VAR(CivBoats, _civBoats);
 
 //////////////////////////////////////
 //         TEMPLATE SELECTION      ///
@@ -495,6 +490,7 @@ private _templateVariables = [
 if !(hasIFA) then {
 	//Rebel Templates
 	switch (true) do {
+		case (activeCUP): {call compile preProcessFileLineNumbers "Templates\CUP_Reb_NPC.sqf"};
 		case (!activeGREF): {call compile preProcessFileLineNumbers "Templates\Vanilla_Reb_FIA_Altis.sqf"};
 		case (has3CB): {call compile preProcessFileLineNumbers "Templates\3CB_Reb_TTF_Arid.sqf"};
 		case (teamPlayer != independent): {call compile preProcessFileLineNumbers "Templates\RHS_Reb_CDF_Arid.sqf"};
@@ -502,13 +498,16 @@ if !(hasIFA) then {
 	};
 	//Occupant Templates
 	switch (true) do {
+		case (activeCUP): {call compile preProcessFileLineNumbers "Templates\CUP_Occ_USA.sqf"};
 		case (!activeUSAF): {call compile preProcessFileLineNumbers "Templates\Vanilla_Occ_NATO_Altis.sqf"};
 		case (has3CB): {call compile preProcessFileLineNumbers "Templates\BAF_Occ_BAF_Arid.sqf"};
 		case (teamPlayer != independent): {call compile preProcessFileLineNumbers "Templates\RHS_Occ_CDF_Arid.sqf"};
 		case (activeUSAF): {call compile preProcessFileLineNumbers "Templates\RHS_Occ_USAF_Arid.sqf"};
+		case (activeCUP): {call compile preProcessFileLineNumbers "Templates\CUP_Occ_USA.sqf"};
 	};
 	//Invader Templates
 	switch (true) do {
+		case (activeCUP): {call compile preProcessFileLineNumbers "Templates\CUP_Inv_AFRF.sqf"};
 		case (!activeAFRF): {call compile preProcessFileLineNumbers "Templates\Vanilla_Inv_CSAT_Altis.sqf";};
 		case (has3CB): {call compile preProcessFileLineNumbers "Templates\3CB_Inv_TKM_Arid.sqf"};
 		case (activeAFRF): {call compile preProcessFileLineNumbers "Templates\RHS_Inv_AFRF_Arid.sqf"};
@@ -634,6 +633,9 @@ if (hasRHS) then {
 };
 if (hasIFA) then {
 	[] call A3A_fnc_ifaModCompat;
+};
+if (activeCUP) then {
+	[] call A3A_fnc_cupModCompat;
 };
 
 ////////////////////////////////////

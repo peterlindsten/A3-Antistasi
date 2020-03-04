@@ -8,10 +8,11 @@ if (isNull _oldUnit) exitWith {};
 waitUntil {alive player};
 
 _nul = [_oldUnit] spawn A3A_fnc_postmortem;
-
-_oldUnit setVariable ["incapacitated",false,true];
-_newUnit setVariable ["incapacitated",false,true];
-
+if !(hasACEMedical) then
+	{
+	_oldUnit setVariable ["INCAPACITATED",false,true];
+	_newUnit setVariable ["INCAPACITATED",false,true];
+	};
 if (side group player == teamPlayer) then
 	{
 	_owner = _oldUnit getVariable ["owner",_oldUnit];
@@ -29,7 +30,7 @@ if (side group player == teamPlayer) then
 
 	if (_moneyX < 0) then {_moneyX = 0};
 
-	_newUnit setVariable ["score",_score -1,true];
+	_newUnit setVariable ["score",_score -10,true];
 	_newUnit setVariable ["owner",_newUnit,true];
 	_newUnit setVariable ["punish",_punish,true];
 	_newUnit setVariable ["respawning",false];
@@ -43,13 +44,12 @@ if (side group player == teamPlayer) then
 	_newUnit setCaptive false;
 	_newUnit setRank (_rankX);
 	_newUnit setVariable ["rankX",_rankX,true];
-	_newUnit setUnitTrait ["camouflageCoef",0.8];
-	_newUnit setUnitTrait ["audibleCoef",0.8];
 	{
     _newUnit addOwnedMine _x;
     } count (getAllOwnedMines (_oldUnit));
+	
+	[] call a3c_fnc_setUnitTrait;
 
-	// don't reinit revive because damage handlers are respawn-persistent
 	//if (!hasACEMedical) then {[_newUnit] call A3A_fnc_initRevive};
 	disableUserInput false;
 	//_newUnit enableSimulation true;
@@ -249,3 +249,6 @@ else
 	[player] call A3A_fnc_dress;
 	if (hasACE) then {[] call A3A_fnc_ACEpvpReDress};
 	};
+
+// Save player stats on respawn	
+[] call A3C_fnc_updateFull;

@@ -3,6 +3,7 @@ private _playerX = _this select 1;
 private _recruiting = _this select 3;
 
 [_unit,"remove"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_unit];
+[1,_playerX,"powr"] remoteExec ["a3c_fnc_updateStat",_playerX];
 
 if (!alive _unit) exitWith {};
 

@@ -1,6 +1,6 @@
 private ["_display","_childControl","_costs","_costHR","_unitsX","_formatX"];
 if (!([player] call A3A_fnc_hasRadio)) exitWith {if !(hasIFA) then {hint "You need a radio in your inventory to be able to give orders to other squads"} else {hint "You need a Radio Man in your group to be able to give orders to other squads"}};
-_nul = createDialog "squad_recruit";
+_nul = createDialog "a3c_squad_recruit";
 
 sleep 1;
 disableSerialization;

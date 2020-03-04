@@ -194,8 +194,8 @@ if ((not alive _heli) || {((taskState "DES") == "SUCCEEDED") || {(count (_vehicl
 	[0,300*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
 	if (typeOf _heli in vehCSATAir) then {[0,3] remoteExec ["A3A_fnc_prestige",2]} else {[3,0] remoteExec ["A3A_fnc_prestige",2]};
 	[1800*_bonus] remoteExec ["A3A_fnc_timingCA",2];
-	{if (_x distance _heli < 500) then {[10*_bonus,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
-	[5*_bonus,theBoss] call A3A_fnc_playerScoreAdd;
+	{if (_x distance _heli < 500) then {[25*_bonus,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
+	[25*_bonus,theBoss] call A3A_fnc_playerScoreAdd;
 	["DES1",[format ["The rebels managed to shot down a helicopter. A recovery team departing from the %1 is inbound to recover it. Cover them while they perform the whole operation",_nameXbase],"Helicopter Down",_mrkFinal],_posCrash,"FAILED","Defend"] call A3A_fnc_taskUpdate;
 	}
 else

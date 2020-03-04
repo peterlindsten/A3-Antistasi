@@ -27,7 +27,7 @@ if ((_veh != _soldierX) and (not(_veh in _artyArray))) then
 		if ((canFire _veh) and (alive _veh) and (isNil "typeAmmunition")) then
 			{
 			_areAlive = true;
-			_nul = createDialog "mortar_type";
+			_nul = createDialog "a3c_mortar_type";
 			waitUntil {!dialog or !(isNil "typeAmmunition")};
 			if !(isNil "typeAmmunition") then
 				{
@@ -70,7 +70,7 @@ hcShowBar true;
 if (_typeAmmunition != "2Rnd_155mm_Mo_LG") then
 	{
 	closedialog 0;
-	_nul = createDialog "strike_type";
+	_nul = createDialog "a3c_strike_type";
 	}
 else
 	{
@@ -143,7 +143,7 @@ if (_typeArty != "BARRAGE") then
 	if (_typeAmmunition != "2Rnd_155mm_Mo_LG") then
 		{
 		closedialog 0;
-		_nul = createDialog "rounds_number";
+		_nul = createDialog "a3c_rounds_number";
 		}
 	else
 		{

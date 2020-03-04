@@ -1,9 +1,10 @@
 private ["_typeX","_textX"];
-
+// Disabled for now -rory
+/*
 _typeX = typeOf player;
 _textX = "";
 switch (_typeX) do
-	{
+	{ 
 	//case "I_C_Soldier_Para_7_F": {player setUnitTrait ["UAVHacker",true]}; //opted as we use units which automatically have the trait - 8th January 2020, Bob Murphy
 	//case "I_C_Soldier_Para_8_F": {player setUnitTrait ["engineer",true]; player setUnitTrait ["explosiveSpecialist",true]}; //opted as we use units which automatically have the trait - 8th January 2020, Bob Murphy
 	//case "I_C_Soldier_Para_3_F": {player setUnitTrait ["medic",true]}; //opted as we use units which automatically have the trait - 8th January 2020, Bob Murphy
@@ -47,3 +48,4 @@ if (isMultiPlayer) then
 	sleep 5;
 	hint format ["You have selected %1",_textX];
 	};
+*/

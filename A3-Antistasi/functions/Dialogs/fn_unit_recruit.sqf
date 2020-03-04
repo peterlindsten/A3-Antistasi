@@ -1,5 +1,5 @@
 private ["_display","_childControl"];
-_nul = createDialog "unit_recruit";
+_nul = createDialog "a3c_recruit_unit";
 
 sleep 1;
 disableSerialization;

@@ -96,7 +96,7 @@ else
 			{
 			[petros,"hint","Supplies Delivered"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
 			["LOG",[_taskDescription,"City Supplies",_markerX],_positionX,"SUCCEEDED","Heal"] call A3A_fnc_taskUpdate;
-			{if (_x distance _positionX < 500) then {[10*_bonus,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
+			{if (_x distance _positionX < 500) then {[25*_bonus,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 			[5*_bonus,theBoss] call A3A_fnc_playerScoreAdd;
 			if (!isMultiplayer) then {_bonus = _bonus + ((20-skillFIA)*0.1)};
 			[-1*(20-skillFIA),15*_bonus,_markerX] remoteExec ["A3A_fnc_citySupportChange",2];

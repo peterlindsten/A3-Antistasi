@@ -4,6 +4,7 @@ respawnDelay = 15;
 aiKills = 0;
 disabledAI = 1;
 Saving = 0;
+briefing = 0;
 
 class Header
 {

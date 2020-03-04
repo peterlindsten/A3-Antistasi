@@ -128,16 +128,15 @@ while {true} do
 	bombRuns = bombRuns + (({sidesX getVariable [_x,sideUnknown] == teamPlayer} count airportsX) * 0.25);
 	[petros,"taxRep",_textX] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
 	[] call A3A_fnc_economicsAI;
-    [] call A3A_fnc_cleanConvoyMarker;
-
+	
 	if (isMultiplayer) then
 	{
-		[] spawn A3A_fnc_promotePlayer;
+		[] spawn A3C_fnc_updateRank;
 		[] call A3A_fnc_assignBossIfNone;
 		difficultyCoef = floor ((({side group _x == teamPlayer} count (call A3A_fnc_playableUnits)) - ({side group _x != teamPlayer} count (call A3A_fnc_playableUnits))) / 5);
 		publicVariable "difficultyCoef";
 	};
-
+	
 	if ((!bigAttackInProgress) and (random 100 < 50)) then {[] call A3A_fnc_missionRequestAUTO};
 	//Removed from scheduler for now, as it errors on Headless Clients.
 	//[[],"A3A_fnc_reinforcementsAI"] call A3A_fnc_scheduler;
