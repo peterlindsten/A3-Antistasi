@@ -12,5 +12,6 @@ A3-Antistasi/roadsDB*.sqf
 A3-Antistasi/PIC.jpg
 A3-Antistasi/ak.jpg
 
-#Ignore packaged missions
+#Ignore folders
+A3/
 PreparedMissions/
