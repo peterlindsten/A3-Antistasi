@@ -15,6 +15,6 @@ if (!isMultiplayer) then {
 };
 
 enableSaving [false,false];
-mapX setObjectTexture [0,"A3-antistasi.jpg"];
+mapX setObjectTexture [0,"\antistasi_client\resource\image\whiteboard.jpg"];
 
 [2,"Init finished",_fileName] call A3A_fnc_log;

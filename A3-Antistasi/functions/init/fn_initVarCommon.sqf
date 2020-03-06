@@ -133,7 +133,7 @@ lamptypes = ["Lamps_Base_F", "PowerLines_base_F","Land_LampDecor_F","Land_LampHa
 //     SOUNDS AND ANIMATIONS     ///
 ////////////////////////////////////
 [2,"Compiling sounds and animations",_fileName] call A3A_fnc_log;
-ladridos = ["A3C\resource\sound\dog_bark01.ogg", "A3C\resource\sound\dog_bark02.ogg", "A3C\resource\sound\dog_bark03.ogg", "A3C\resource\sound\dog_bark04.ogg", "A3C\resource\sound\dog_bark05.ogg","A3C\resource\sound\dog_maul01.ogg","A3C\resource\sound\dog_yelp01.ogg","A3C\resource\sound\dog_yelp02.ogg","A3C\resource\sound\dog_yelp03.ogg"];
+ladridos = ["\antistasi_client\resource\sound\dog_bark01.ogg", "\antistasi_client\resource\sound\dog_bark02.ogg", "\antistasi_client\resource\sound\dog_bark03.ogg", "\antistasi_client\resource\sound\dog_bark04.ogg", "\antistasi_client\resource\sound\dog_bark05.ogg","\antistasi_client\resource\sound\dog_maul01.ogg","\antistasi_client\resource\sound\dog_yelp01.ogg","\antistasi_client\resource\sound\dog_yelp02.ogg","\antistasi_client\resource\sound\dog_yelp03.ogg"];
 injuredSounds =
 [
 	"a3\sounds_f\characters\human-sfx\Person0\P0_moan_13_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_14_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_15_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_16_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_17_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_18_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_19_words.wss","a3\sounds_f\characters\human-sfx\Person0\P0_moan_20_words.wss",

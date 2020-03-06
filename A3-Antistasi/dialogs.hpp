@@ -1,5 +1,3 @@
-//class vehicle_option
-
 class RscTitles {
 	class Default {
        idd = -1;

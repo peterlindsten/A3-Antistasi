@@ -25,7 +25,7 @@ _textSpoiler = _display displayCtrl 1101;
 _text2 = _display displayCtrl 1102;
 
 _message = "";
-_message = _message + "<t align='center' size='8' shadow='0'><img image='A3C\resource\image\A3AS.paa'/></t><br /><br />";
+_message = _message + "<t align='center' size='8' shadow='0'><img image='\antistasi_client\resource\image\welcome_logo.paa'/></t><br /><br />";
 _message = _message + "Antistasi by Barbolani and the Official Antistasi Community, this version is further edited by rory-dev and the A3 Community.<br /><br />";
 _message = _message + "We still expect bugs on this version and will release new features and content over the next few weeks.<br /><br />";
 _message = _message + "You will need to join TS and please submit feedback on the discord:<br /><br />";
