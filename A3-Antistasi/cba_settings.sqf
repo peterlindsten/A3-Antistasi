@@ -129,7 +129,7 @@ force ace_repair_fullRepairRequiredItems = ["ToolKit"];
 force ace_repair_miscRepairRequiredItems = ["ToolKit"];
 force ace_repair_repairDamageThreshold = 0.6;
 force ace_repair_repairDamageThreshold_engineer = 0.4;
-force ace_repair_wheelRepairRequiredItems = [];
+force ace_repair_wheelRepairRequiredItems = ["ToolKit"];
 
 // ACE Magazine Repack
 force ace_magazinerepack_timePerAmmo = 1;
@@ -171,7 +171,7 @@ ace_nametags_nametagColorYellow = [1,1,0.67,1];
 force ace_nametags_playerNamesMaxAlpha = 0.8;
 force ace_nametags_playerNamesViewDistance = 5;
 force ace_nametags_showCursorTagForVehicles = false;
-ace_nametags_showNamesForAI = true;
+ace_nametags_showNamesForAI = false;
 ace_nametags_showPlayerNames = 1;
 ace_nametags_showPlayerRanks = true;
 ace_nametags_showSoundWaves = 1;
@@ -188,7 +188,7 @@ force ace_overheating_unJamFailChance = 0.1;
 force ace_overheating_unJamOnreload = true;
 
 // ACE Pointing
-force ace_finger_enabled = true;
+force ace_finger_enabled = false;
 ace_finger_indicatorColor = [0.83,0.68,0.21,0.75];
 ace_finger_indicatorForSelf = true;
 force ace_finger_maxRange = 4;
@@ -282,7 +282,7 @@ force ace_vehiclelock_lockVehicleInventory = false;
 force ace_vehiclelock_vehicleStartingLockState = -1;
 
 // ACE Vehicles
-ace_vehicles_hideEjectAction = false;
+ace_vehicles_hideEjectAction = true;
 force ace_vehicles_keepEngineRunning = false;
 
 // ACE Weapons
