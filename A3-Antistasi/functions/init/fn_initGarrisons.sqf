@@ -119,6 +119,9 @@ if (gameMode == 1) then
 		case "chernarus_summer": {
 			_mrkCSAT = ["outpost_21"];
 		};
+		case "cup_chernarus_A3": {
+			_mrkCSAT = ["outpost_21"];
+		};
 		case "tem_anizay": {
 			_mrkCSAT = ["outpost_8", "control_19", "control_44", "control_45"];
 			_controlsCSAT = ["control_19", "control_44", "control_45"];

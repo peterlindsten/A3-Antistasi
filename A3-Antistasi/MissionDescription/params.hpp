@@ -26,7 +26,7 @@ class Params
           title = "Time between autosaves (in minutes)";
           values[] = {600,1200,1800,3600,5400};
           texts[] = {"10","20","30","60","90"};
-          default = 3600;
+          default = 1800;
      };
      class membership
      {
@@ -53,7 +53,7 @@ class Params
      {
           title = "Distance from HQ for Sidemissions";
           values[] = {2000,4000,6000,8000,10000,12000};
-          default = 4000;
+          default = 6000;
      };
      class allowPvP
      {
@@ -93,14 +93,14 @@ class Params
           title = "Rate of Civ Traffic";
           values[] = {0,1,2,3};
           texts[] = {"None","Low","Medium","JAM"};
-          default = 1;
+          default = 2;
      };
      class memberSlots
      {
           title = "Percentage of Reserved Slots for Members";
           values[] = {0,20,40,60,80,100};
           texts[] = {"None","20%","40%","60%","80%","All"};
-          default = 20;
+          default = 0;
      };
      class memberDistance
      {
@@ -142,7 +142,7 @@ class Params
           title = "Do Unlocked Weapons Automatically Unlock Their Standard Magazine?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class allowGuidedLaunchers
      {
@@ -170,7 +170,7 @@ class Params
           title = "Allow Items and Vehicles from Karts DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class Mark
      {

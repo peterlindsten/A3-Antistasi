@@ -47,3 +47,4 @@ player setVariable ["realname", profileName, true];
 0 cutText ["","BLACK IN"];
 clientIsReady = true;
 diag_log format ["------Completed A3 Client Init ------ :: Execution Time %1 seconds ",(diag_tickTime - _timeStamp)];
+

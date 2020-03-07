@@ -18,7 +18,7 @@ citiesX = [];
 private ["_name", "_sizeX", "_sizeY", "_size", "_pos", "_mrk"];
 
 
-if ((toLower worldName) in ["altis", "chernarus_summer"]) then {
+if ((toLower worldName) in ["altis", "chernarus_summer", "cup_chernarus_A3"]) then {
 
 	"((getText (_x >> ""type"")) == ""Hill"") &&
 	!((getText (_x >> ""name"")) isEqualTo """") &&
@@ -72,6 +72,9 @@ switch (toLower worldName) do {
 	case "chernarus_summer": {
 		{server setVariable [_x select 0,_x select 1]} forEach [["vill_NovySobor",129],["city_StarySobor",149],["vill_Guglovo",26],["vill_Vyshnoye",41],["vill_Kabanino",86],["vill_Rogovo",66],["vill_Mogilevka",104],["city_Gorka",115],["vill_Grishino",168],["vill_Shakhovka",55],["vill_Pogorevka",57],["vill_Pulkovo",26],["vill_Nadezhdino",109],["city_Vybor",180],["vill_Polana",118],["vill_Staroye",115],["vill_Dubrovka",86],["vill_Pustoshka",163],["vill_Kozlovka",100],["vill_Pusta",52],["vill_Dolina",83],["vill_Gvozdno",78],["vill_Prigorodki",145],["vill_Drozhino",58],["vill_Sosnovka",54],["vill_Msta",96],["vill_Lopatino",159],["city_Zelenogorsk",280],["vill_Orlovets",65],["city_Berezino",340],["vill_Myshkino",49],["vill_Petrovka",45],["city_Chernogorsk",761],["vill_Bor",46],["vill_Nizhnoye",146],["vill_Balota",147],["vill_Khelm",110],["city_Krasnostav",194],["vill_Komarovo",127],["city_Elektrozavodsk",745],["city_Solnychniy",224],["vill_Kamyshovo",196],["vill_Tulga",35],["vill_Pavlovo",99],["vill_Kamenka",127],["hill_Olsha",20]];
 	};
+	case "cup_chernarus_A3": {
+		{server setVariable [_x select 0,_x select 1]} forEach [["vill_NovySobor",129],["city_StarySobor",149],["vill_Guglovo",26],["vill_Vyshnoye",41],["vill_Kabanino",86],["vill_Rogovo",66],["vill_Mogilevka",104],["city_Gorka",115],["vill_Grishino",168],["vill_Shakhovka",55],["vill_Pogorevka",57],["vill_Pulkovo",26],["vill_Nadezhdino",109],["city_Vybor",180],["vill_Polana",118],["vill_Staroye",115],["vill_Dubrovka",86],["vill_Pustoshka",163],["vill_Kozlovka",100],["vill_Pusta",52],["vill_Dolina",83],["vill_Gvozdno",78],["vill_Prigorodki",145],["vill_Drozhino",58],["vill_Sosnovka",54],["vill_Msta",96],["vill_Lopatino",159],["city_Zelenogorsk",280],["vill_Orlovets",65],["city_Berezino",340],["vill_Myshkino",49],["vill_Petrovka",45],["city_Chernogorsk",761],["vill_Bor",46],["vill_Nizhnoye",146],["vill_Balota",147],["vill_Khelm",110],["city_Krasnostav",194],["vill_Komarovo",127],["city_Elektrozavodsk",745],["city_Solnychniy",224],["vill_Kamyshovo",196],["vill_Tulga",35],["vill_Pavlovo",99],["vill_Kamenka",127],["hill_Olsha",20]];
+	};
 	case "chernarus_winter": {
 		{server setVariable [_x select 0,_x select 1]} forEach [["vill_NovySobor",129],["city_StarySobor",149],["vill_Guglovo",26],["vill_Vyshnoye",41],["vill_Kabanino",86],["vill_Rogovo",66],["vill_Mogilevka",104],["city_Gorka",115],["vill_Grishino",168],["vill_Shakhovka",55],["vill_Pogorevka",57],["vill_Pulkovo",26],["vill_Nadezhdino",109],["city_Vybor",180],["vill_Polana",118],["vill_Staroye",115],["vill_Dubrovka",86],["vill_Pustoshka",163],["vill_Kozlovka",100],["vill_Pusta",52],["vill_Dolina",83],["vill_Gvozdno",78],["vill_Prigorodki",145],["vill_Drozhino",58],["vill_Sosnovka",54],["vill_Msta",96],["vill_Lopatino",159],["city_Zelenogorsk",280],["vill_Orlovets",65],["city_Berezino",340],["vill_Myshkino",49],["vill_Petrovka",45],["city_Chernogorsk",761],["vill_Bor",46],["vill_Nizhnoye",146],["vill_Balota",147],["vill_Khelm",110],["city_Krasnostav",194],["vill_Komarovo",127],["city_Elektrozavodsk",745],["city_Solnychniy",224],["vill_Kamyshovo",196],["vill_Tulga",35],["vill_Pavlovo",99],["vill_Kamenka",127],["hill_Olsha",20]];
 	};
@@ -93,7 +96,7 @@ configClasses (configfile >> "CfgWorlds" >> worldName >> "Names") apply {
 	_roads = [];
 	_numCiv = 0;
 
-	if ( (toLower worldName) in ["tanoa", "altis", "chernarus_summer", "chernarus_winter"] ) then
+	if ( (toLower worldName) in ["tanoa", "altis", "chernarus_summer", "chernarus_winter", "cup_chernarus_A3"] ) then
 	{
 		_roads = roadsX getVariable [_nameX, []];
 		if (count _roads == 0) then {
@@ -204,7 +207,8 @@ private _replaceBadAntenna = {
 		};
 		private _antennaPos = getPos _antenna;
 		_antennaPos set [2, 0];
-		private _antennaClass = if (worldName == "chernarus_summer") then { "Land_Telek1" } else { "Land_TTowerBig_2_F" };
+		
+		private _antennaClass = if ( (toLower worldName) in ["chernarus_summer", "chernarus_winter", "cup_chernarus_A3"] ) then { "Land_Telek1" } else { "Land_TTowerBig_2_F" };
 		_antenna = createVehicle [_antennaClass, _antennaPos, [], 0, "NONE"];
 	};
 	_antenna;
@@ -225,6 +229,11 @@ switch (worldName) do {
 		antennas = [];
 	};
 	case "chernarus_summer": {
+		_posAntennas = [[6444.13,6545.83,-0.106628], [5264.35,5314.45,0.0291748], [4968.53,9964.4,0], [3715.81,5984.25,0], [6563.69,3405.56,0.0547104],[4548.22,3131.85,0.570232], [13010.1,5964.96,-0.0164185], [3029.57,2350.28,0.0183334], [13477.6,3345.84,0.0729446], [12937,12763.6,0.164017]];
+		_blackListPos = [1, 7];
+		antennas = [];
+	};
+	case "cup_chernarus_A3": {
 		_posAntennas = [[6444.13,6545.83,-0.106628], [5264.35,5314.45,0.0291748], [4968.53,9964.4,0], [3715.81,5984.25,0], [6563.69,3405.56,0.0547104],[4548.22,3131.85,0.570232], [13010.1,5964.96,-0.0164185], [3029.57,2350.28,0.0183334], [13477.6,3345.84,0.0729446], [12937,12763.6,0.164017]];
 		_blackListPos = [1, 7];
 		antennas = [];

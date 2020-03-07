@@ -489,6 +489,7 @@ class A3A
 	class Templates
 	{
 		class aceModCompat {};
+		class cupModCompat {};
 		class getLoadout {};
 		class ifaModCompat {};
 		class rhsModCompat {};

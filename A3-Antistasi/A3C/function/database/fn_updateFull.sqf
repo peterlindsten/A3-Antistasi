@@ -47,6 +47,9 @@ _powr = player getVariable ["powr", 0];
 _stats = [_infk,_vick,_armk,_airk,_death,_revives,_teamk,_civk,_civr,_powk,_powi,_powr];
 _packet pushback _stats;
 
+_last_mission = campaignID;
+_packet pushback _last_mission;
+
 // Send it
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Client Update Request -------------";

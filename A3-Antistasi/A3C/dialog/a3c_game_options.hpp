@@ -108,8 +108,8 @@ class a3c_game_options
 			h = 0.07500004;
 			style = 0+2;
 			text = "Persistent Save"; //--- ToDo: Localize;
-			tooltip = "Use this option to save your current game. It does save the most important data in a ""Grand Theft Auto"" way. This opnion allows good MP save and independent saves of any version update. Vanilla saves are disabled because of lack of several features";
-			action = "closeDialog 0;if (player == theBoss) then {[""statSave\saveLoop.sqf"",""BIS_fnc_execVM""] call BIS_fnc_MP} else {_nul = [] execVM ""statSave\saveLoop.sqf""; hintC ""Personal Stats Saved""};";
+			tooltip = "Use this option to save your current game.";
+			action = "closeDialog 0;if (player == theBoss) then {[] remoteExecCall [""A3A_fnc_saveLoop"", 0, false];} else {[] remoteExecCall [""A3A_fnc_saveLoop"", player, false];; hintC ""Personal Stats Saved""};";
 			
 		};
 

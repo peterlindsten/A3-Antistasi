@@ -86,11 +86,13 @@ _score = parseNumber (_this select 5);
 player setVariable ["moneyX",_money,true];
 player setVariable ["score",_score,true];
 
-//Set Player Gear & Garage
+//Set Player Gear
 a3c_gear = _this select 6;
 call a3c_fnc_loadGear;
 
-_garage = _this select 7;
+//Set Player Garage
+_last_mission = parseNumber (_this select 4);
+if (_last_mission isEqualTo campaignID) then {_garage = _this select 7;} else {_garage = "[]";};
 player setVariable ["personalgarage",_garage,true];
 
 clientQueryComplete = true;

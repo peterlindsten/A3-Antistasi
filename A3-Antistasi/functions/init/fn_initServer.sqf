@@ -76,7 +76,7 @@ if (isMultiplayer) then {
 
 //Load Campaign ID if resuming game
 if(loadLastSave) then {
-	campaignID = profileNameSpace getVariable ["ss_CampaignID",""];
+	campaignID = profileNameSpace getVariable ["/",""];
 }
 else {
 	campaignID = str(round((random(100000)) + random 10000));
@@ -217,7 +217,7 @@ savingServer = false;
 	};
 };
 
-[] call compile preprocessFileLineNumbers "\a3_antistasi\init.sqf";
+[] call compile preprocessFileLineNumbers "\antistasi_server\init.sqf";
 
 execvm "functions\init\fn_initSnowFall.sqf";
 
