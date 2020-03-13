@@ -34,7 +34,7 @@ while {alive _dog} do
 		{
 		_dog doWatch _spotted;
 		(leader _groupX) reveal [_spotted,4];
-		playSound3D [missionPath + (ladridos select (floor random 5)),_dog, false, getPosASL _dog, 1, 1, 100];
+		playSound3D [ladridos select (floor random 5),_dog, false, getPosASL _dog, 1, 1, 100];
 		_dog moveTo getPosATL _spotted;
 		if (_spotted distance _dog > 100) then {_spotted = objNull};
 		sleep 3;

@@ -92,7 +92,8 @@ call a3c_fnc_loadGear;
 
 //Set Player Garage
 _last_mission = parseNumber (_this select 4);
-if (_last_mission isEqualTo campaignID) then {_garage = _this select 7;} else {_garage = "[]";};
+_garage = _this select 7;
+//if !(_last_mission isEqualTo campaignID) then {_garage = [];};
 player setVariable ["personalgarage",_garage,true];
 
 clientQueryComplete = true;
