@@ -76,7 +76,7 @@ if (isMultiplayer) then {
 
 //Load Campaign ID if resuming game
 if(loadLastSave) then {
-	campaignID = profileNameSpace getVariable ["/",""];
+	campaignID = profileNameSpace getVariable ["ss_CampaignID",""];
 }
 else {
 	campaignID = str(round((random(100000)) + random 10000));
