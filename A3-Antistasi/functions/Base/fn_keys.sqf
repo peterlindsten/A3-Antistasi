@@ -24,11 +24,12 @@ else
 	{
 	if (_key == 207) then
 		{
-			if (soundVolume isEqualTo 1) then {
-			1 fadeSound 0.4; hintSilent "Ear Plugs Inserted";
-			}else{
-			1 fadeSound 1; hintSilent "Ear Plugs Removed";
-			};
+        if (soundVolume isEqualTo 1) then {
+		    1 fadeSound 0.4; 
+            ["Ear Plugs", "You've inserted your ear plugs.", true] call A3A_fnc_customHint;
+		    }else{
+		    ["Ear Plugs", "You've taken out your ear plugs.", true] call A3A_fnc_customHint;
+            };
 		};
 	};
 _handled

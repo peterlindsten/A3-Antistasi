@@ -1,12 +1,12 @@
 if (hasInterface) then {
-	if (!isNil "savingClient" && {savingClient}) exitWith {hint "Your personal stats are being saved"};
+	if (!isNil "savingClient" && {savingClient}) exitWith {["Save", "Your personal stats are being saved"] call A3A_fnc_customHint;};
 	[] call A3C_fnc_updateFull;
 };
 
 //Server only from here on out.
 if (!isServer) exitWith {};
 
-if (savingServer) exitWith {"Server data save is still in progress" remoteExecCall ["hint",theBoss]};
+if (savingServer) exitWith {["Save Game", "Server data save is still in progress"] remoteExecCall ["A3A_fnc_customHint",theBoss]};
 savingServer = true;
 private ["_garrison"];
 ["countCA", countCA] call A3A_fnc_setStatVariable;
@@ -207,5 +207,5 @@ _controlsX = controlsX select {(sidesX getVariable [_x,sideUnknown] == teamPlaye
 
 savingServer = false;
 _saveHintText = "Savegame Done.";
-[petros,"hint",_saveHintText] remoteExec ["A3A_fnc_commsMP", 0];
+[petros,"hint",_saveHintText, "Save"] remoteExec ["A3A_fnc_commsMP", 0];
 diag_log format ["%1: [Antistasi] | INFO | Persistent Save Completed.",servertime];
