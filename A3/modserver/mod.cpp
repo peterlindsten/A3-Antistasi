@@ -1,0 +1,12 @@
+name = "A3 Antistasi - server mod";
+picture = "";
+actionName = "Website";
+action = "https://a3command.com";
+description = "A3 Antistasi - server mod";
+logo = "";
+logoOver = "";
+tooltip = "A3 Antistasi - server mod";
+tooltipOwned = "A3 Antistasi - server mod";
+overview = "A3 Antistasi - server mod";
+author = "rory-dev";
+overviewPicture = "";
