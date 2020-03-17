@@ -1,0 +1,1394 @@
+version=53;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1537;
+	class ItemIDProvider
+	{
+		nextID=652;
+	};
+	class LayerIndexProvider
+	{
+		nextID=12;
+	};
+	class Camera
+	{
+		pos[]={6819.8057,350.5697,4973.1089};
+		dir[]={0.32712755,-0.55507857,0.7647745};
+		up[]={0.21829939,0.83179665,0.51035076};
+		aside[]={0.91942132,-8.4401108e-009,-0.39327645};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Ui_F",
+	"A3_Modules_F",
+	"A3_Characters_F",
+	"A3_Modules_F_Hc",
+	"A3_Modules_F_Curator_Curator"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=4;
+		class Item0
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=9530406;
+class ScenarioData
+{
+	author="rory";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.40000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.40000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2009;
+		day=28;
+		hour=16;
+		minute=20;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=20;
+		class Item0
+		{
+			dataType="Layer";
+			name="AS Markers";
+			class Entities
+			{
+				items=20;
+				class Item0
+				{
+					dataType="Marker";
+					position[]={3509.9355,67.309448,13270.197};
+					name="NATO_carrier";
+					type="flag_NATO";
+					id=1;
+					atlOffset=25.281887;
+				};
+				class Item1
+				{
+					dataType="Marker";
+					position[]={-7259.3076,481.67026,1531.3604};
+					name="respawn_west";
+					type="flag_NATO";
+					alpha=0;
+					id=2;
+					atlOffset=0.0002746582;
+				};
+				class Item2
+				{
+					dataType="Marker";
+					position[]={8129.8022,116.16772,1922.6429};
+					name="airport";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=278.18396;
+					b=113.83923;
+					angle=330.55096;
+					drawBorder=1;
+					id=3;
+					atlOffset=-179.87228;
+				};
+				class Item3
+				{
+					dataType="Marker";
+					position[]={5968.5151,437.19937,11509.163};
+					name="airport_1";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=394.96936;
+					b=176.08688;
+					angle=312.5657;
+					drawBorder=1;
+					id=4;
+					atlOffset=354.15936;
+				};
+				class Item4
+				{
+					dataType="Marker";
+					position[]={-751.59143,567.04248,7613.2773};
+					name="control";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=20;
+					b=20;
+					angle=156.91283;
+					drawBorder=1;
+					id=6;
+					atlOffset=79.340515;
+				};
+				class Item5
+				{
+					dataType="Marker";
+					position[]={-683.08057,566.43866,6998.877};
+					name="factory";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorCIV";
+					fillName="SolidBorder";
+					a=84.414001;
+					b=94.182999;
+					angle=230.54199;
+					drawBorder=1;
+					id=47;
+					atlOffset=79.340485;
+				};
+				class Item6
+				{
+					dataType="Marker";
+					position[]={-771.10474,528.98358,6434.7427};
+					name="outpost";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=50;
+					b=78.901268;
+					angle=220.62495;
+					drawBorder=1;
+					id=52;
+				};
+				class Item7
+				{
+					dataType="Marker";
+					position[]={-668.9895,479.78827,8123.4531};
+					name="resource";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorBlue";
+					fillName="SolidBorder";
+					a=28.08;
+					b=27.122999;
+					angle=51.656982;
+					drawBorder=1;
+					id=74;
+					atlOffset=-3.0517578e-005;
+				};
+				class Item8
+				{
+					dataType="Marker";
+					position[]={-776.44183,307.35718,6026.8101};
+					name="seaport";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorGreen";
+					fillName="SolidBorder";
+					a=67;
+					b=57.640522;
+					angle=90.478401;
+					drawBorder=1;
+					id=84;
+					atlOffset=-112.1373;
+				};
+				class Item9
+				{
+					dataType="Marker";
+					position[]={229.90723,496.37177,7316.1841};
+					name="Synd_HQ";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorGreen";
+					fillName="SolidBorder";
+					a=50;
+					b=50;
+					angle=343.46863;
+					drawBorder=1;
+					id=89;
+				};
+				class Item10
+				{
+					dataType="Marker";
+					position[]={224.04587,2.7037606e+012,7336.0137};
+					name="respawn_guerrila";
+					text="Your Headquarters";
+					type="hd_flag";
+					colorName="ColorGUER";
+					id=90;
+					atlOffset=2.7037606e+012;
+				};
+				class Item11
+				{
+					dataType="Marker";
+					position[]={2042.6246,222.86252,11726.015};
+					name="fuel";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=20;
+					b=17.118;
+					angle=118.52599;
+					drawBorder=1;
+					id=113;
+					atlOffset=79.32991;
+				};
+				class Item12
+				{
+					dataType="Marker";
+					position[]={3109.8831,140.50336,9831.2979};
+					name="fuel_1";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=13.763246;
+					b=16.36129;
+					angle=165.59486;
+					drawBorder=1;
+					id=114;
+					atlOffset=79.302521;
+				};
+				class Item13
+				{
+					dataType="Marker";
+					position[]={3535.8518,312.82614,4212.3149};
+					name="fuel_2";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=14.627331;
+					b=11.839104;
+					angle=179.49625;
+					drawBorder=1;
+					id=115;
+					atlOffset=79.177185;
+				};
+				class Item14
+				{
+					dataType="Marker";
+					position[]={5524.0576,157.46991,9244.2119};
+					name="fuel_3";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=20;
+					b=17.118;
+					angle=177.84016;
+					drawBorder=1;
+					id=116;
+					atlOffset=79.32991;
+				};
+				class Item15
+				{
+					dataType="Marker";
+					position[]={5829.7432,338.85785,5812.0342};
+					name="fuel_4";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=20;
+					b=17.118;
+					angle=157.59175;
+					drawBorder=1;
+					id=117;
+					atlOffset=79.329895;
+				};
+				class Item16
+				{
+					dataType="Marker";
+					position[]={7461.8765,365.24426,1802.3403};
+					name="fuel_5";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=12.310463;
+					b=14.329622;
+					angle=118.52596;
+					drawBorder=1;
+					id=118;
+					atlOffset=79.371796;
+				};
+				class Item17
+				{
+					dataType="Marker";
+					position[]={8180.2588,251.62827,7833.103};
+					name="fuel_6";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=20;
+					b=17.118;
+					angle=118.52596;
+					drawBorder=1;
+					id=119;
+					atlOffset=82.534637;
+				};
+				class Item18
+				{
+					dataType="Marker";
+					position[]={10489.942,338.10535,6288.1855};
+					name="fuel_7";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=15.567244;
+					b=14.722193;
+					angle=95.884613;
+					drawBorder=1;
+					id=120;
+					atlOffset=79.390839;
+				};
+				class Item19
+				{
+					dataType="Marker";
+					position[]={10690.508,222.54839,11026.3};
+					name="fuel_8";
+					markerType="RECTANGLE";
+					type="rectangle";
+					colorName="ColorRed";
+					fillName="SolidBorder";
+					a=13.671294;
+					b=12.332609;
+					angle=118.52596;
+					drawBorder=1;
+					id=121;
+					atlOffset=79.416183;
+				};
+			};
+			id=0;
+			atlOffset=2.6403909e+009;
+		};
+		class Item1
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6373.7061,337.41541,15236.746};
+			};
+			name="server";
+			id=96;
+			type="Logic";
+			atlOffset=217.90198;
+		};
+		class Item2
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5372.0039,287.76477,15218.365};
+			};
+			name="garrison";
+			id=97;
+			type="Logic";
+			atlOffset=217.94495;
+		};
+		class Item3
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4368.9219,239.09778,15238.615};
+			};
+			name="spawner";
+			id=98;
+			type="Logic";
+			atlOffset=217.71381;
+		};
+		class Item4
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={342.82568,336.57605,14237.779};
+			};
+			name="hc";
+			isPlayable=1;
+			id=99;
+			type="HeadlessClient_F";
+			atlOffset=220.48672;
+		};
+		class Item5
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3356.7109,267.73737,15227.242};
+			};
+			name="roadsX";
+			id=100;
+			type="Logic";
+			atlOffset=217.57434;
+		};
+		class Item6
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={365.57227,371.20264,13242.627};
+				angles[]={0,4.511023,0};
+			};
+			name="HC_commanderX";
+			id=101;
+			type="HighCommand";
+			atlOffset=220.93622;
+		};
+		class Item7
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1355.0366,310.06458,13236.939};
+				angles[]={0,1.3577622,0};
+			};
+			id=102;
+			type="HighCommandSubordinate";
+			atlOffset=220.64639;
+		};
+		class Item8
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2378.6201,269.40134,15244.301};
+			};
+			name="timer";
+			id=103;
+			type="Logic";
+			atlOffset=218.81494;
+		};
+		class Item9
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1366.4097,279.78162,15232.928};
+			};
+			name="sidesX";
+			id=104;
+			type="Logic";
+			atlOffset=219.55414;
+		};
+		class Item10
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={365.57227,328.10818,15249.988};
+			};
+			name="killZones";
+			id=105;
+			type="Logic";
+			atlOffset=219.44006;
+		};
+		class Item11
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1372.0957,314.9754,14232.092};
+			};
+			name="hc_1";
+			isPlayable=1;
+			id=106;
+			type="HeadlessClient_F";
+			atlOffset=220.38002;
+		};
+		class Item12
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2361.5605,300.69275,14243.465};
+			};
+			name="hc_2";
+			isPlayable=1;
+			id=107;
+			type="HeadlessClient_F";
+			atlOffset=219.56912;
+		};
+		class Item13
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3356.7109,275.1376,14243.465};
+			};
+			name="hc_3";
+			isPlayable=1;
+			id=108;
+			type="HeadlessClient_F";
+			atlOffset=217.7775;
+		};
+		class Item14
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4357.5488,260.32852,14249.152};
+			};
+			name="hc_4";
+			isPlayable=1;
+			id=109;
+			type="HeadlessClient_F";
+			atlOffset=217.619;
+		};
+		class Item15
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5352.7002,279.33499,14237.779};
+			};
+			name="hc_5";
+			isPlayable=1;
+			id=110;
+			type="HeadlessClient_F";
+			atlOffset=217.66226;
+		};
+		class Item16
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2355.874,310.0083,13248.313};
+			};
+			id=111;
+			type="ModuleCurator_F";
+			atlOffset=218.82906;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="#adminLogged";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item17
+		{
+			dataType="Marker";
+			position[]={4527.8384,329.46753,13358.594};
+			name="tsadd";
+			text="Teamspeak : TS3.ONIONGAMERS.COM";
+			type="mil_start";
+			id=112;
+			atlOffset=261.98004;
+		};
+		class Item18
+		{
+			dataType="Layer";
+			name="Officers HQ [BLU]";
+			id=438;
+			atlOffset=-610.15997;
+		};
+		class Item19
+		{
+			dataType="Layer";
+			name="Liberation Markers";
+			class Entities
+			{
+				items=63;
+				class Item0
+				{
+					dataType="Marker";
+					position[]={3125.856,60.310009,9977.708};
+					name="bigtown_1";
+					text="Nagara";
+					type="n_service";
+					colorName="ColorEAST";
+					a=1.55;
+					b=1.55;
+					angle=90;
+					id=136;
+					atlOffset=7.6293945e-006;
+				};
+				class Item1
+				{
+					dataType="Marker";
+					position[]={1613.0542,537.00208,2353.3916};
+					name="tower_1";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=142;
+				};
+				class Item2
+				{
+					dataType="Marker";
+					position[]={3713.4575,676.90112,2729.3154};
+					name="tower_2";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=143;
+				};
+				class Item3
+				{
+					dataType="Marker";
+					position[]={4747.1812,679.75543,2468.2051};
+					name="tower_3";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=144;
+				};
+				class Item4
+				{
+					dataType="Marker";
+					position[]={9769.334,678.42279,3658.6221};
+					name="tower_4";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=145;
+					atlOffset=0.10314941;
+				};
+				class Item5
+				{
+					dataType="Marker";
+					position[]={8495.1934,486.95868,1095.583};
+					name="tower_5";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=146;
+					atlOffset=0.089111328;
+				};
+				class Item6
+				{
+					dataType="Marker";
+					position[]={12266.949,849.0921,4813.499};
+					name="tower_6";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=147;
+				};
+				class Item7
+				{
+					dataType="Marker";
+					position[]={9824.4707,506.19943,7364.9463};
+					name="tower_7";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=148;
+				};
+				class Item8
+				{
+					dataType="Marker";
+					position[]={8020.6831,615.61652,6175.9028};
+					name="tower_8";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=149;
+				};
+				class Item9
+				{
+					dataType="Marker";
+					position[]={6904.5869,606.80023,3917.8818};
+					name="tower_9";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=150;
+					atlOffset=0.0064697266;
+				};
+				class Item10
+				{
+					dataType="Marker";
+					position[]={3104.3335,446.77835,4582.2363};
+					name="tower_10";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=151;
+				};
+				class Item11
+				{
+					dataType="Marker";
+					position[]={2255.3247,529.92505,8594.3398};
+					name="tower_11";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=152;
+				};
+				class Item12
+				{
+					dataType="Marker";
+					position[]={3990.6851,536.87988,6920.5063};
+					name="tower_12";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=153;
+				};
+				class Item13
+				{
+					dataType="Marker";
+					position[]={6500.0083,325.0603,8120.8486};
+					name="tower_13";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=154;
+					atlOffset=0.087097168;
+				};
+				class Item14
+				{
+					dataType="Marker";
+					position[]={11381.207,507.37573,7097.7954};
+					name="tower_14";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=155;
+					atlOffset=3.0517578e-005;
+				};
+				class Item15
+				{
+					dataType="Marker";
+					position[]={8833.625,269.40134,11848.8};
+					name="tower_15";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=156;
+				};
+				class Item16
+				{
+					dataType="Marker";
+					position[]={6398.2153,148.54886,12470.491};
+					name="tower_16";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=157;
+				};
+				class Item17
+				{
+					dataType="Marker";
+					position[]={498.51123,663.86401,11015.56};
+					name="tower_17";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=158;
+					atlOffset=6.1035156e-005;
+				};
+				class Item18
+				{
+					dataType="Marker";
+					position[]={621.66455,732.68152,10036.987};
+					name="tower_18";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=159;
+					atlOffset=0.18823242;
+				};
+				class Item19
+				{
+					dataType="Marker";
+					position[]={8693.875,257.5943,9250.2969};
+					name="tower_19";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=160;
+					atlOffset=0.16906738;
+				};
+				class Item20
+				{
+					dataType="Marker";
+					position[]={3127.5327,113.36786,11844.94};
+					name="tower_20";
+					text="Radio Tower";
+					type="loc_Transmitter";
+					colorName="ColorEAST";
+					id=161;
+					atlOffset=7.6293945e-006;
+				};
+				class Item21
+				{
+					dataType="Marker";
+					position[]={6083.5571,293.04742,1167.3428};
+					name="capture_4";
+					text="Huzrutimam";
+					type="n_art";
+					colorName="ColorEAST";
+					id=165;
+				};
+				class Item22
+				{
+					dataType="Marker";
+					position[]={9232.2988,339.57892,1851.3076};
+					name="capture_6";
+					text="Jaza";
+					type="n_art";
+					colorName="ColorEAST";
+					id=167;
+				};
+				class Item23
+				{
+					dataType="Marker";
+					position[]={1410.8706,215.6492,3518.4956};
+					name="capture_10";
+					text="Shukurkalay";
+					type="n_art";
+					colorName="ColorEAST";
+					id=171;
+					atlOffset=-1.5258789e-005;
+				};
+				class Item24
+				{
+					dataType="Marker";
+					position[]={3740.4194,226.13095,4478.5977};
+					name="capture_11";
+					text="Sakhe";
+					type="n_art";
+					colorName="ColorEAST";
+					id=172;
+					atlOffset=1.5258789e-005;
+				};
+				class Item25
+				{
+					dataType="Marker";
+					position[]={6056.5679,304.06647,5650.709};
+					name="capture_15";
+					text="Anar";
+					type="n_art";
+					colorName="ColorEAST";
+					id=176;
+				};
+				class Item26
+				{
+					dataType="Marker";
+					position[]={9115.5859,203.00958,6761.3857};
+					name="capture_17";
+					text="Garmarud";
+					type="n_art";
+					colorName="ColorEAST";
+					id=178;
+					atlOffset=0.01965332;
+				};
+				class Item27
+				{
+					dataType="Marker";
+					position[]={12274.424,146.1629,10445.591};
+					name="capture_19";
+					text="Karachinar";
+					type="n_art";
+					colorName="ColorEAST";
+					id=180;
+				};
+				class Item28
+				{
+					dataType="Marker";
+					position[]={5923.9976,122.95011,7286.1064};
+					name="capture_20";
+					text="Falar";
+					type="n_art";
+					colorName="ColorEAST";
+					id=181;
+					atlOffset=7.6293945e-006;
+				};
+				class Item29
+				{
+					dataType="Marker";
+					position[]={1931.1948,289.46304,7626.1221};
+					name="capture_21";
+					text="Mulladost";
+					type="n_art";
+					colorName="ColorEAST";
+					id=182;
+					atlOffset=3.0517578e-005;
+				};
+				class Item30
+				{
+					dataType="Marker";
+					position[]={8238.7734,177.47995,7791.7852};
+					name="capture_25";
+					text="Imarat";
+					type="n_art";
+					colorName="ColorEAST";
+					id=186;
+					atlOffset=0.11761475;
+				};
+				class Item31
+				{
+					dataType="Marker";
+					position[]={8389.1367,232.38724,11096.087};
+					name="factory_2";
+					text="Par-e-Siah-Ölfeld";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=189;
+				};
+				class Item32
+				{
+					dataType="Marker";
+					position[]={6579.811,306.28964,1540.751};
+					name="factory_3";
+					text="Loy-Manara-Ölfeld";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=190;
+					atlOffset=3.0517578e-005;
+				};
+				class Item33
+				{
+					dataType="Marker";
+					position[]={1113.2085,450.58606,7014.8403};
+					name="factory_6";
+					text="Mulladost Quarry";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=193;
+				};
+				class Item34
+				{
+					dataType="Marker";
+					position[]={1249.9233,400.93057,10621.854};
+					name="factory_7";
+					text="Nur Quarry";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=194;
+					atlOffset=-0.00012207031;
+				};
+				class Item35
+				{
+					dataType="Marker";
+					position[]={3468.2729,89.186165,11093.688};
+					name="factory_8";
+					text="Nagara-1-Ölfeld";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=195;
+				};
+				class Item36
+				{
+					dataType="Marker";
+					position[]={4577.0845,132.77173,9422.4023};
+					name="factory_9";
+					text="Lalezar Factory";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=196;
+				};
+				class Item37
+				{
+					dataType="Marker";
+					position[]={6828.1753,300.56317,6118.7563};
+					name="factory_11";
+					text="Anar Fuel Storage";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=198;
+				};
+				class Item38
+				{
+					dataType="Marker";
+					position[]={9392.2246,164.25098,10018.272};
+					name="factory_13";
+					text="Sagram Factory";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=200;
+					atlOffset=3.0517578e-005;
+				};
+				class Item39
+				{
+					dataType="Marker";
+					position[]={5022.2319,195.50732,5427.3252};
+					name="factory_14";
+					text="Kakaru Fuel Storage";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=201;
+				};
+				class Item40
+				{
+					dataType="Marker";
+					position[]={1858.9019,209.94598,3910.6846};
+					name="factory_15";
+					text="Shukurkalay Fuel Storage";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=202;
+					atlOffset=-1.5258789e-005;
+				};
+				class Item41
+				{
+					dataType="Marker";
+					position[]={2702.7983,223.47076,7989.5049};
+					name="factory_16";
+					text="Mulladost Fuel Storage";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=203;
+					atlOffset=1.5258789e-005;
+				};
+				class Item42
+				{
+					dataType="Marker";
+					position[]={6315.7905,324.98749,5021.7075};
+					name="factory_18";
+					text="Anar Oil Pumps";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=206;
+				};
+				class Item43
+				{
+					dataType="Marker";
+					position[]={3614.2456,167.2937,5592.1802};
+					name="factory_19";
+					text="Jilavur Fuel Storage";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=207;
+					atlOffset=3.0517578e-005;
+				};
+				class Item44
+				{
+					dataType="Marker";
+					position[]={7843.9453,385.05975,3687.4302};
+					name="factory_20";
+					text="Loy Manara Quarry";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=208;
+				};
+				class Item45
+				{
+					dataType="Marker";
+					position[]={7060.5874,281.66757,1025.9053};
+					name="factory_21";
+					text="Loy-Manara Factory";
+					type="loc_Fuelstation";
+					colorName="ColorEAST";
+					id=209;
+				};
+				class Item46
+				{
+					dataType="Marker";
+					position[]={8662.8027,403.49023,1431.4111};
+					name="military_3";
+					text="Jaza Milita Camp";
+					type="o_support";
+					colorName="ColorEAST";
+					id=212;
+				};
+				class Item47
+				{
+					dataType="Marker";
+					position[]={10998.363,403.72098,2480.1221};
+					name="military_4";
+					text="Chardarakht Milita Camp";
+					type="o_support";
+					colorName="ColorEAST";
+					id=213;
+				};
+				class Item48
+				{
+					dataType="Marker";
+					position[]={8015.5083,325.7782,2965.6299};
+					name="military_5";
+					text="Loy Manara Milita Camp";
+					type="o_support";
+					colorName="ColorEAST";
+					id=214;
+				};
+				class Item49
+				{
+					dataType="Marker";
+					position[]={112.29932,246.06186,2810.5059};
+					name="military_6";
+					text="Chaman Milita Camp";
+					type="o_support";
+					colorName="ColorEAST";
+					id=215;
+				};
+				class Item50
+				{
+					dataType="Marker";
+					position[]={3187.8745,322.31418,3553.3057};
+					name="military_7";
+					text="Sakhe Milita Camp";
+					type="o_support";
+					colorName="ColorEAST";
+					id=216;
+				};
+				class Item51
+				{
+					dataType="Marker";
+					position[]={968.30029,229.42868,3135.9033};
+					name="military_8";
+					text="Shukurkalay Militia Camp";
+					type="o_support";
+					colorName="ColorEAST";
+					id=217;
+				};
+				class Item52
+				{
+					dataType="Marker";
+					position[]={1610.1216,194.20059,11662.472};
+					name="military_9";
+					text="Nur Milita Camp";
+					type="o_support";
+					colorName="ColorEAST";
+					id=218;
+					atlOffset=1.5258789e-005;
+				};
+				class Item53
+				{
+					dataType="Marker";
+					position[]={10414.504,256.3797,6415.4604};
+					name="military_10";
+					text="Garmsar Military Base";
+					type="o_support";
+					colorName="ColorEAST";
+					id=219;
+				};
+				class Item54
+				{
+					dataType="Marker";
+					position[]={6853.0723,326.61533,5031.0786};
+					name="military_11";
+					text="Anar Milita Camp";
+					type="o_support";
+					colorName="ColorEAST";
+					id=220;
+				};
+				class Item55
+				{
+					dataType="Marker";
+					position[]={12498.402,202.72452,9957.0654};
+					name="military_12";
+					text="Karachinar Militia Camp";
+					type="o_support";
+					colorName="ColorEAST";
+					id=221;
+				};
+				class Item56
+				{
+					dataType="Marker";
+					position[]={6064.7173,83.01709,11504.3};
+					name="military_13";
+					text="Rasman Military Base";
+					type="o_support";
+					colorName="ColorEAST";
+					id=223;
+				};
+				class Item57
+				{
+					dataType="Marker";
+					position[]={5934.3979,83.040009,11861.851};
+					name="military_14";
+					text="Rasman Response Force Base";
+					type="o_support";
+					colorName="ColorEAST";
+					id=224;
+					atlOffset=7.6293945e-006;
+				};
+				class Item58
+				{
+					dataType="Marker";
+					position[]={6037.48,67.292572,10457.044};
+					name="military_15";
+					text="Rasman Helicopter Base";
+					type="o_support";
+					colorName="ColorEAST";
+					id=225;
+					atlOffset=7.6293945e-006;
+				};
+				class Item59
+				{
+					dataType="Marker";
+					position[]={6672.7534,165.66797,7414.2471};
+					name="military_16";
+					text="Falar Milita Camp";
+					type="o_support";
+					colorName="ColorEAST";
+					id=226;
+					atlOffset=1.5258789e-005;
+				};
+				class Item60
+				{
+					dataType="Marker";
+					position[]={5047.2261,301.07999,6883.4507};
+					name="military_17";
+					text="Feruz-Abad Prisoner Mines";
+					type="o_support";
+					colorName="ColorEAST";
+					id=227;
+				};
+				class Item61
+				{
+					dataType="Marker";
+					position[]={3166.7192,182.9093,8221.373};
+					name="military_18";
+					text="Gospandi Milita Camp";
+					type="o_support";
+					colorName="ColorEAST";
+					id=228;
+				};
+				class Item62
+				{
+					dataType="Marker";
+					position[]={5169.0854,145.36081,6084.0815};
+					name="military_19";
+					text="Feruz-Abad Military Base";
+					type="o_support";
+					colorName="ColorEAST";
+					id=292;
+				};
+			};
+			id=651;
+			atlOffset=-238.49539;
+		};
+	};
+	class Connections
+	{
+		class LinkIDProvider
+		{
+			nextID=1;
+		};
+		class Links
+		{
+			items=1;
+			class Item0
+			{
+				linkID=0;
+				item0=101;
+				item1=102;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+		};
+	};
+};
