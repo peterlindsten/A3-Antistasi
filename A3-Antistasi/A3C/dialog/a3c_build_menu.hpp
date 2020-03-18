@@ -125,22 +125,6 @@ class ControlsBackground
 			action = "closeDialog 0; [""rem""] spawn A3A_fnc_garrisonDialog";
 	
 		};
-		class menu_message : a3cMenuButton
-		{
-			type = 0;
-			idc = -1;
-			x = 0.0750001;
-			y = 0.72500014;
-			w = 0.85000003;
-			h = 0.10000004;
-			style = 2;
-			text = "* this menu will be replaced with the mobile phone and admin menu";
-			colorBackground[] = {0,0,0,0};
-			colorText[] = {0.902,0.902,0.902,1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			
-		};
 		
 	};
 	

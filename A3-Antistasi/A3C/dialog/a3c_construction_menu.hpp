@@ -115,9 +115,9 @@ class a3c_construction_menu
 			w = 0.37500003;
 			h = 0.07500004;
 			style = 0+2;
-			text = "Vehicle obstacles"; //--- ToDo: Localize;
-			tooltip = "Build some obstacles for vehicles";
-			action = "closeDialog 0;nul = [""RB""] spawn A3A_fnc_build;";
+			text = "Sandbag Fence"; //--- ToDo: Localize;
+			tooltip = "A Small Sandbag Fence";
+			action = "closeDialog 0; nul = [""SF""] spawn A3A_fnc_build;";
 			
 		};
 		class menu4 : a3cMenuButton 
@@ -129,11 +129,39 @@ class a3c_construction_menu
 			w = 0.37500003;
 			h = 0.07500004;
 			style = 0+2;
-			text = "Bunker Options"; //--- ToDo: Localize;
-			tooltip = "Need to be built in garrison controlled zones and cost money";
-			action = "closeDialog 0;nul = createDialog ""a3c_bunker_menu""";
+			text = "Tank Trap"; //--- ToDo: Localize;
+			tooltip = "Barbed Wire Fence with Tank Traps";
+			action = "closeDialog 0; nul = [""TT""] spawn A3A_fnc_build;";
 			
 		};
+		class menu5 : a3cMenuButton 
+		{
+			type = 1;
+			idc = -1;
+			x = 0.10151516;
+			y = 0.50101011;
+			w = 0.37575758;
+			h = 0.0747475;
+			style = 0+2;
+			text = "Small Bunker"; //--- ToDo: Localize;
+			tooltip = "A Sandbag Bunker";
+			action = "closeDialog 0; nul = [""BU""] spawn A3A_fnc_build;";
+		};
+		class menu6 : a3cMenuButton 
+		{
+			type = 1;
+			idc = -1;
+			x = 0.52651521;
+			y = 0.50101011;
+			w = 0.37575758;
+			h = 0.0747475;
+			style = 0+2;
+			text = "Watchtower"; //--- ToDo: Localize;
+			tooltip = "A Wooden Watchtower";
+			action = "closeDialog 0; nul = [""WT""] spawn A3A_fnc_build;";
+
+		};
+
 		
 	};
 	

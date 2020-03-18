@@ -5,7 +5,8 @@ A3C_civVehicles =[
 				"C_Offroad_01_F",
 				"C_Quadbike_01_F",
 				"CUP_C_SUV_TK",
-				"CUP_C_LR_Transport_CTK"
+				"CUP_C_LR_Transport_CTK",
+				"C_Van_02_transport_F"
 				];
 // List of vehicles that players can purchase and their prices
 A3C_fiaVehicles = [
@@ -18,8 +19,13 @@ A3C_fiaVehicles = [
 				["I_G_Offroad_01_armed_F", 700],
 				["CUP_C_SUV_TK", 300],
 				["CUP_C_LR_Transport_CTK", 300],
+				["CUP_I_Hilux_unarmed_TK", 300],
+				["CUP_I_Hilux_M2_TK", 700],
 				["I_G_Van_02_vehicle_F", 500],
 				["I_G_Van_02_transport_F", 500],
+				["C_Van_02_transport_F", 700],
+				["CUP_I_Hilux_armored_unarmed_TK", 1000],
+				["CUP_I_Hilux_armored_M2_TK", 1200],
 				["I_HMG_01_high_F", 400],
 				["I_Static_AT_F", 700],
 				["I_Static_AA_F", 700],

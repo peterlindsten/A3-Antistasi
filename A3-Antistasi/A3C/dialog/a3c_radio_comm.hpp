@@ -107,9 +107,9 @@ class a3c_radio_comm
 			w = 0.37500003;
 			h = 0.07500004;
 			style = 0+2;
-			text = "Disabled"; //--- ToDo: Localize;
-			tooltip = "Menu has been Disabled / Removed";
-			action = "";
+			text = "Construct Here"; //--- ToDo: Localize;
+			tooltip = "Construct in the spot where you are a selected building facing this direction";
+			action = "closeDialog 0;_nul = createDialog ""a3c_construction_menu"";";
 			
 		};
 		class menu5 : a3cMenuButton 

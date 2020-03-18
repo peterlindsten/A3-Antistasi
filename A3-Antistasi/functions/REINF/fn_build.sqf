@@ -82,64 +82,33 @@ switch build_type do
 	{
 	case "ST":
 		{
-		if (count (nearestTerrainObjects [player, ["House"], 70]) > 3) then
-			{
-			_classX = selectRandom ["Land_GarbageWashingMachine_F","Land_JunkPile_F","Land_Barricade_01_4m_F"];
-			}
-		else
-			{
-			if (count (nearestTerrainObjects [player,["tree"],70]) > 8) then
-				{
-				_classX = "Land_WoodPile_F";
-				}
-			else
-				{
-				_classX = "CraterLong_small";
-				};
-			};
+		build_time = 10;
+		_classX = "Fort_EnvelopeSmall_EP1";
 		};
 	case "MT":
 		{
-		build_time = 60;
-		if (count (nearestTerrainObjects [player, ["House"], 70]) > 3) then
-			{
-			_classX = "Land_Barricade_01_10m_F";
-			}
-		else
-			{
-			if (count (nearestTerrainObjects [player,["tree"],70]) > 8) then
-				{
-				_classX = "Land_WoodPile_large_F";
-				}
-			else
-				{
-				_classX = selectRandom ["Land_BagFence_01_long_green_F","Land_SandbagBarricade_01_half_F"];
-				};
-			};
+		build_time = 45;
+		_classX = "Land_Barricade_01_10m_F";
 		};
-	case "RB":
+	case "SF":
 		{
-		build_time = 100;
-		if (count (nearestTerrainObjects [player, ["House"], 70]) > 3) then
-			{
-			_classX = "Land_Tyres_F";
-			}
-		else
-			{
-			_classX = "Land_TimberPile_01_F";
-			};
+		build_time = 10;
+		_classX = "Land_fort_bagfence_long";
 		};
-	case "SB":
+	case "TT":
+		{
+		build_time = 45;
+		_classX = "Wire";
+		};
+	case "BU":
 		{
 		build_time = 60;
-		_classX = "Land_BagBunker_01_small_green_F";
-		build_cost = 100;
+		_classX = "Land_fortified_nest_small_EP1";
 		};
-	case "CB":
+	case "WT":
 		{
-		build_time = 120;
-		_classX = "Land_PillboxBunker_01_big_F";
-		build_cost = 300;
+		build_time = 60;
+		_classX = "Land_Posed";
 		};
 	};
 
