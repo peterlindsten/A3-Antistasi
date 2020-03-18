@@ -22,7 +22,7 @@ def parse_arguments():
                         help="Base folder, defaults to script file location")
     parser.add_argument("--out", default="out",
                         help="Output directory, will be recreated")
-    parser.add_argument("--maps", default="Map-Templates",
+    parser.add_argument("--maps", default="A3/maps",
                         help="Map templates directory, multiple subdirectories assumed")
     parser.add_argument("--data", default="A3-Antistasi",
                         help="Main mission files")
@@ -47,15 +47,16 @@ def main(root, outdir, mapsdir, datadir, filebank, pack):
         parts = mapdir.name.split(".")
         newdir = ".".join(["-".join([parts[0], dashversion]), *parts[1:]])
         logging.info("Processing %s", newdir)
-        shutil.copytree(root / datadir, root / outdir / newdir)
+        mapout = root / outdir / newdir
+        shutil.copytree(root / datadir, mapout)
         distutils.dir_util.copy_tree(
-            str(root / mapsdir / mapdir), str(root / outdir / newdir))
+            str(root / mapsdir / mapdir), str(mapout))
         if (pack):
             logging.info("Packing %s", newdir)
             subprocess.run([str(filebank), "-dst",
-                            str(root / outdir), str(root / outdir / newdir)])
+                            str(root / outdir), str(mapout)])
 
-    for moddir in (root / "A3").iterdir():
+    for moddir in (root / "A3" / "mods").iterdir():
         for addon in (moddir / "addons").iterdir():
             logging.info("Packing %s", addon.name)
             subprocess.run([str(filebank), "-dst",
