@@ -26,14 +26,16 @@ def parse_arguments():
                         help="Map templates directory, multiple subdirectories assumed")
     parser.add_argument("--data", default="A3-Antistasi",
                         help="Main mission files")
+    parser.add_argument("--addonbuilder", default="addonbuilder.exe",
+                        help="Path to addonbuilder, assumed on PATH")
     parser.add_argument("--filebank", default="filebank.exe",
-                        help="Path to filebank, assumed on PATH")
+                        help="Path to filebank for packing missions only, assumed on PATH")
     parser.add_argument("--pack", "-p", action='store_true',
                         help="Also pack missions to .pbo")
     return parser.parse_args()
 
 
-def main(root, outdir, mapsdir, datadir, filebank, pack):
+def main(root, outdir, mapsdir, datadir, addonbuilder, filebank, pack):
     if (outdir.exists()):
         logging.info("Removing %s", root / outdir)
         shutil.rmtree(root / outdir)
@@ -59,8 +61,8 @@ def main(root, outdir, mapsdir, datadir, filebank, pack):
     for moddir in (root / "A3" / "mods").iterdir():
         for addon in (moddir / "addons").iterdir():
             logging.info("Packing %s", addon.name)
-            subprocess.run([str(filebank), "-dst",
-                            str(root / outdir / moddir.name / "addons"), str(addon)])
+            subprocess.run([str(addonbuilder), str(addon),
+                            str(root / outdir / moddir.name / "addons"), "-packonly"])
 
 
 if (__name__ == "__main__"):
@@ -68,4 +70,4 @@ if (__name__ == "__main__"):
     logging.basicConfig(format=FORMAT, level=logging.INFO)
     args = parse_arguments()
     main(Path(args.root), Path(args.out), Path(args.maps),
-         Path(args.data), Path(args.filebank), args.pack)
+         Path(args.data), Path(args.addonbuilder), Path(args.filebank), args.pack)
