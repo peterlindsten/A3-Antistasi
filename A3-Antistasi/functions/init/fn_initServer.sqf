@@ -70,6 +70,7 @@ if (isMultiplayer) then {
 	teamSwitchDelay = 0;
 	playerMarkersEnabled = true;
 	minPlayersRequiredforPVP = 2;
+    startWithLongRangeRadio = true;
 };
 
 [] call A3A_fnc_crateLootParams;
