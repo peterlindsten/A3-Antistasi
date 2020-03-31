@@ -37,6 +37,7 @@ class CfgFunctions
 		{
 			file = "\antistasi_server\function\init";
 			class initFortify {};
+			class initLoot {};
 		};	
 		class playtime
 		{

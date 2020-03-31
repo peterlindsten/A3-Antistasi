@@ -4,6 +4,7 @@ params [["_filter", {true}]];
 //  ITEM/WEAPON CLASSIFICATION   ///
 ////////////////////////////////////
 //Ignore type 65536, we don't want Vehicle Weapons.
+/*
 private _allWeaponConfigs = "
 	getNumber (_x >> 'scope') == 2
 	&&
@@ -23,6 +24,7 @@ private _allBackpackConfigs = "
 	&&
 	{ getText ( _x >> 'vehicleClass' ) isEqualTo 'Backpacks' }
 " configClasses ( configFile >> "CfgVehicles" );
+*/
 
 private _allStaticWeaponConfigs = "
 	getNumber ( _x >> 'scope' ) isEqualTo 2
@@ -34,7 +36,8 @@ private _allGlassesConfigs = "
 	( getNumber ( _x >> 'scope' ) isEqualTo 2 )
 " configClasses ( configFile >> "CfgGlasses" );
 
-private _allConfigs = _allWeaponConfigs + _allMagazineConfigs + _allBackpackConfigs + _allStaticWeaponConfigs + _allGlassesConfigs;
+//private _allConfigs = _allWeaponConfigs + _allMagazineConfigs + _allBackpackConfigs + _allStaticWeaponConfigs + _allGlassesConfigs;
+private _allConfigs = _allStaticWeaponConfigs + _allGlassesConfigs + [] call a3s_fnc_initLoot;
 
 ////////////////////////////////////////////////////
 //    Filter out content from disabled mods.     ///
