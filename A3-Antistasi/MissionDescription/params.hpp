@@ -12,7 +12,7 @@ class Params
           title = "Game Mode";
           values[] = {1,2,3,4};
           texts[] = {"Reb vs Gov vs Inv","Reb vs Gov & Inv","Reb vs Gov","Reb vs Inv"};
-          default = 3;
+          default = 1;
      };
      class autoSave
      {
