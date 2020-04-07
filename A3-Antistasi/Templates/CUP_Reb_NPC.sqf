@@ -12,15 +12,15 @@ typePetros = "I_G_officer_F";
 //First Entry is Guerilla, Second Entry is Para/Military
 staticCrewTeamPlayer = "I_G_Soldier_unarmed_F";
 SDKUnarmed = "I_G_Survivor_F";
-SDKSniper = ["I_G_Sharpshooter_F","I_ghillie_ard_F"];
-SDKATman = ["I_G_Soldier_LAT2_F","I_Soldier_LAT2_F"];
-SDKMedic = ["I_G_medic_F","I_medic_F"];
-SDKMG = ["I_G_Soldier_AR_F","I_Soldier_AR_F"];
-SDKExp = ["I_G_Soldier_exp_F","I_Soldier_exp_F"];
-SDKGL = ["I_G_Soldier_GL_F","I_Soldier_GL_F"];
-SDKMil = ["I_G_Soldier_lite_F","I_Soldier_lite_F"];
-SDKSL = ["I_G_Soldier_SL_F","I_Soldier_SL_F"];
-SDKEng = ["I_G_engineer_F","I_engineer_F"];
+SDKSniper = ["CUP_I_GUE_Sniper","CUP_I_PMC_Sniper"];
+SDKATman = ["CUP_I_GUE_Soldier_AT","CUP_I_PMC_Soldier_AT"];
+SDKMedic = ["CUP_I_GUE_Medic","CUP_I_PMC_Medic"];
+SDKMG = ["CUP_I_GUE_Soldier_MG","CUP_I_PMC_Soldier_MG_PKM"];
+SDKExp = ["CUP_I_GUE_Saboteur","CUP_I_GUE_Saboteur"];
+SDKGL = ["CUP_I_GUE_Soldier_GL","CUP_I_PMC_Soldier_GL_M16A2"];
+SDKMil = ["CUP_I_GUE_Soldier_AKS74","CUP_I_PMC_Bodyguard_M4"];
+SDKSL = ["CUP_I_GUE_Officer","CUP_I_PMC_Contractor1"];
+SDKEng = ["CUP_I_GUE_Engineer","CUP_I_PMC_Engineer"];
 
 ////////////////////////////////////
 //            GROUPS             ///
@@ -49,7 +49,7 @@ vehSDKAT = "I_G_Offroad_01_AT_F";
 vehSDKLightUnarmed = "I_G_Offroad_01_F";
 vehSDKTruck = "I_G_Van_01_transport_F";
 //vehSDKHeli = "I_C_Heli_Light_01_civil_F";
-vehSDKPlane = "I_C_Plane_civil_01_F";
+vehSDKPlane = "CUP_C_AN2_AEROSCHROT_TK_CIV";
 vehSDKBoat = "I_G_Boat_Transport_01_F";
 vehSDKRepair = "I_G_Offroad_01_repair_F";
 
@@ -94,6 +94,8 @@ APERSMineMag = "APERSMine_Range_Mag";
 breachingExplosivesAPC = [["DemoCharge_Remote_Mag", 1]];
 //Breaching tanks needs one satchel charge or two demo charges
 breachingExplosivesTank = [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]];
+
+//Todo : update rebel starting unlocks
 
 //Starting Unlocks
 initialRebelEquipment append ["hgun_Pistol_heavy_02_F","hgun_P07_F","SMG_01_F","SMG_02_F"];

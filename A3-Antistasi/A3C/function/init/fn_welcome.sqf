@@ -28,7 +28,7 @@ _message = "";
 _message = _message + "<t align='center' size='8' shadow='0'><img image='\antistasi_client\resource\image\welcome_logo.paa'/></t><br /><br />";
 _message = _message + "Antistasi by Barbolani and the Official Antistasi Community, this version is further edited by rory-dev and the A3 Community.<br /><br />";
 _message = _message + "Join us on Teamspeak and discord:<br /><br />";
-_message = _message + "<a color='#FFFFFF'>•</a> Teamspeak (required): <a href='ts3server://ts.a3command.com' color='#56BDD6'> ts.a3command.com</a><br />";
+_message = _message + "<a color='#FFFFFF'>•</a> Teamspeak: <a href='ts3server://ts.a3command.com' color='#56BDD6'> ts.a3command.com</a><br />";
 _message = _message + "<a color='#FFFFFF'>•</a> Discord: <a href='https://discord.a3command.com' color='#56BDD6'> discord.a3command.com</a><br /><br />";
 _message = _message + "Thanks for joining and enjoy your stay, A3 Command Team.<br />";
 _message = _message + "Check the Map Briefing for further info.";
