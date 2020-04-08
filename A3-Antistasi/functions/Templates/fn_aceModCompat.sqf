@@ -3,15 +3,15 @@
 ////////////////////////////////////
 diag_log format ["%1: [Antistasi] | INFO | initVar | Creating ACE Items List",servertime];
 aceItems = [
-	"ACE_EarPlugs",
-	"ACE_RangeCard",
+//	"ACE_EarPlugs",
+//	"ACE_RangeCard",
 	"ACE_Clacker",
 	"ACE_M26_Clacker",
 	"ACE_DefusalKit",
 	"ACE_MapTools",
 	"ACE_Flashlight_MX991",
 	"ACE_wirecutter",
-	"ACE_RangeTable_82mm",
+//	"ACE_RangeTable_82mm",
 	"ACE_EntrenchingTool",
 	"ACE_Cellphone",
 	"ACE_CableTie",
