@@ -9,7 +9,6 @@ import argparse
 import xml
 import os
 import shutil
-import xml.etree.ElementTree as ET
 from pathlib import Path
 import logging
 import distutils.dir_util
@@ -40,14 +39,8 @@ def main(root, outdir, mapsdir, datadir, addonbuilder, filebank, pack):
         logging.info("Removing %s", root / outdir)
         shutil.rmtree(root / outdir)
     os.makedirs(root / outdir)
-    stringtable = ET.parse(root / datadir / "Stringtable.xml")
-    version = stringtable.find(
-        ".//Key[@ID='STR_antistasi_credits_generic_version_text']/Original").text
-    logging.info("Found version %s", version)
-    dashversion = "-".join(version.split("."))
     for mapdir in (root / mapsdir).iterdir():
-        parts = mapdir.name.split(".")
-        newdir = ".".join(["-".join([parts[0], dashversion]), *parts[1:]])
+        newdir = mapdir.name
         logging.info("Processing %s", newdir)
         mapout = root / outdir / newdir
         shutil.copytree(root / datadir, mapout)
