@@ -98,12 +98,27 @@ breachingExplosivesTank = [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_
 //Todo : update rebel starting unlocks
 
 //Starting Unlocks
+// Weapons
 initialRebelEquipment append ["hgun_Pistol_heavy_02_F","hgun_P07_F","SMG_01_F","SMG_02_F"];
-initialRebelEquipment append ["SMG_01_F","SMG_02_F"];
+initialRebelEquipment append ["CUP_SKS","CUP_srifle_LeeEnfield","CUP_srifle_Mosin_Nagant","CUP_hgun_TEC9","CUP_launch_M72A6"];
+// Mags
 initialRebelEquipment append ["6Rnd_45ACP_Cylinder","16Rnd_9x21_Mag","30Rnd_45ACP_Mag_SMG_01","30Rnd_9x21_Mag_SMG_02","MiniGrenade","SmokeShell"];
+initialRebelEquipment append ["CUP_10Rnd_762x39_SKS_M","CUP_10x_303_M", "CUP_5Rnd_762x54_Mosin_M", "CUP_32Rnd_9x19_TEC9"];
+// Backpacks
 initialRebelEquipment append ["B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_ocamo","B_FieldPack_oucamo","B_FieldPack_cbr","B_FieldPack_khk"];
+// Vests
 initialRebelEquipment append ["V_Chestrig_blk","V_Chestrig_rgr","V_Chestrig_khk","V_Chestrig_oli","V_BandollierB_blk","V_BandollierB_cbr","V_BandollierB_rgr","V_BandollierB_khk","V_BandollierB_oli","V_Rangemaster_belt"];
-initialRebelEquipment append ["Binocular","acc_flashlight"];
+// Items
+initialRebelEquipment append ["Binocular","acc_flashlight","ItemCompass","ItemWatch","FirstAidKit","Medikit","ToolKit","Chemlight_green"];
+// Breaching charge
+initialRebelEquipment append ["DemoCharge_Remote_Mag"];
+// Uniforms
+initialRebelEquipment append ["CUP_U_I_GUE_Anorak_01","CUP_U_I_GUE_Anorak_02","CUP_U_I_GUE_Anorak_03","CUP_U_C_Suit_01","CUP_U_C_Priest_01","CUP_U_C_Mechanic_02","CUP_U_C_Villager_01","CUP_U_C_Worker_01","CUP_U_C_Worker_02","CUP_U_C_Worker_03","CUP_U_C_Worker_04","CUP_U_C_Woodlander_03","CUP_U_C_Woodlander_02","CUP_U_C_Functionary_jacket_03","CUP_U_C_Rocker_01","CUP_U_C_Rocker_03","CUP_U_C_racketeer_03","CUP_U_C_Profiteer_03","CUP_U_C_Rescuer_01","CUP_U_C_Fireman_01","CUP_U_C_Citizen_01","CUP_U_C_Citizen_02","CUP_U_I_GUE_Flecktarn2"];
+// Headgear
+initialRebelEquipment append ["CUP_H_PMC_EP_Headset","CUP_H_NAPA_Fedora","CUP_H_PMC_Cap_Grey","CUP_H_PMC_Cap_Tan","CUP_H_PMC_Cap_Burberry","CUP_H_PMC_Cap_Back_Tan","CUP_H_PMC_Cap_EP_Tan","CUP_H_PMC_Cap_Back_EP_Grey","CUP_H_PMC_Beanie_Khaki","CUP_H_PMC_Beanie_Winter","CUP_H_PMC_Beanie_Black","CUP_H_FR_BandanaGreen","CUP_H_FR_BandanaWdl","CUP_H_FR_Bandana_Headset","CUP_H_FR_Headband_Headset","CUP_H_C_Ushanka_01","CUP_H_C_Ushanka_02","CUP_H_C_Ushanka_03","CUP_H_C_Ushanka_04","CUP_H_C_Beanie_01","CUP_H_C_Beanie_02","CUP_H_C_Beanie_03","CUP_H_C_Beanie_04","CUP_H_C_Beret_01","CUP_H_C_Beret_02","CUP_H_C_Beret_03","CUP_H_C_Beret_04","CUP_H_C_Fireman_Helmet_01"];
+// Facewear
+initialRebelEquipment append ["CUP_FR_NeckScarf","CUP_FR_NeckScarf2","CUP_FR_NeckScarf3","CUP_FR_NeckScarf4","CUP_FR_NeckScarf5","CUP_G_White_Scarf_Shades","CUP_G_Tan_Scarf_Shades","CUP_G_Grn_Scarf_Shades","CUP_G_Scarf_Face_Red","CUP_G_Scarf_Face_Tan","CUP_G_Scarf_Face_Grn","CUP_G_Scarf_Face_Blk","CUP_G_Scarf_Face_White","CUP_TK_NeckScarf","CUP_RUS_Balaclava_grn","CUP_RUS_Balaclava_blk","CUP_PMC_G_thug","G_Respirator_white_F","G_Respirator_yellow_F","G_EyeProtectors_F","G_EyeProtectors_Earpiece_F","G_Respirator_blue_F","G_Balaclava_TI_blk_F","G_Balaclava_TI_tna_F","G_Bandanna_blk","G_Bandanna_oli","G_Bandanna_khk","G_Bandanna_tan","G_Bandanna_beast","G_Bandanna_shades","G_Bandanna_sport","G_Bandanna_aviator","G_Balaclava_blk","G_Balaclava_oli","G_Balaclava_combat","G_Balaclava_lowprofile","G_Aviator","G_Blindfold_01_white_F","G_Blindfold_01_black_F","CUP_PMC_Facewrap_Black","CUP_PMC_Facewrap_Winter","CUP_PMC_Facewrap_Tropical","CUP_PMC_Facewrap_Tan","CUP_PMC_Facewrap_Red","CUP_PMC_Facewrap_Ranger","CUP_PMC_Facewrap_Smilie","CUP_PMC_Facewrap_Skull"];
 //TFAR Unlocks
 if (hasTFAR) then {initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
 if (hasTFAR && startWithLongRangeRadio) then {initialRebelEquipment pushBack "tf_anprc155"};
+if (hasACE) then {initialRebelEquipment append ["ACE_Flashlight_Maglite_ML300L"]};
